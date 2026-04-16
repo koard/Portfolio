@@ -422,7 +422,7 @@ export default function Home() {
         <section id="experience">
           <div className="content-container">
             <div className="fade-up">
-              <div className="section-eyebrow">Work Experience</div>
+              <div className="section-eyebrow">Career Path</div>
               <h2 className="section-title">
                 Professional Experience
               </h2>
@@ -458,7 +458,7 @@ export default function Home() {
         <section id="projects">
           <div className="content-container">
             <div className="fade-up">
-              <div className="section-eyebrow">Selected Projects</div>
+              <div className="section-eyebrow">Portfolio</div>
               <h2 className="section-title">Featured Projects</h2>
             </div>
             <div className="projects-grid" style={{ marginTop: "2.5rem" }}>
@@ -497,7 +497,7 @@ export default function Home() {
         <section id="skills">
           <div className="content-container">
             <div className="fade-up">
-              <div className="section-eyebrow">Technical Skills</div>
+              <div className="section-eyebrow">Capabilities</div>
               <h2 className="section-title">Technical Expertise</h2>
             </div>
             <div className="skills-grid" style={{ marginTop: "2.5rem" }}>
@@ -566,7 +566,7 @@ export default function Home() {
         <section id="education">
           <div className="content-container">
             <div className="fade-up">
-              <div className="section-eyebrow">Education</div>
+              <div className="section-eyebrow">Qualifications</div>
               <h2 className="section-title">Academic Background</h2>
             </div>
             <div className="timeline-grid" style={{ marginTop: "2.5rem" }}>
