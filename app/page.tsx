@@ -365,10 +365,7 @@ export default function Home() {
                   <span className="type-text">Full-Stack Developer</span>
                 </p>
                 <p className="hero-description">
-                  Full-stack engineer specializing in production-grade systems. Recent Computer Engineering graduate
-                  with proven internship experience architecting, developing, and deploying scalable platforms.
-                  Strong foundation in system design, API development, and infrastructure—focused on building
-                  solutions that scale and endure.
+                  I’m a Full-Stack Developer experienced in building web applications, backend services, and production deployments. My background includes API design, scalable backend development, testing, and maintaining reliable systems in real-world environments. I’m particularly interested in building maintainable systems that balance technical quality with practical business impact.
                 </p>
                 <div className="hero-ctas">
                   <a href="#contact" className="btn-primary">
