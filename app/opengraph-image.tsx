@@ -64,6 +64,8 @@ export default function Image() {
 
         <div
           style={{
+            display: "flex",
+            flexDirection: "column",
             fontSize: "84px",
             fontWeight: 800,
             color: "white",
@@ -72,9 +74,8 @@ export default function Image() {
             letterSpacing: "-0.02em",
           }}
         >
-          Ratchanon
-          <br />
-          Kulpatrakorn
+          <div>Ratchanon</div>
+          <div>Kulpatrakorn</div>
         </div>
 
         <div
