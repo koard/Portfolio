@@ -16,24 +16,51 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Ratchanon Kulpatrakorn | Full-Stack Developer",
+  title: {
+    default: "Ratchanon K. | Software Engineer",
+    template: "%s | Ratchanon Kulpatrakorn",
+  },
   description:
-    "Portfolio of Ratchanon Kulpatrakorn — Full-Stack Developer specializing in Next.js, React, TypeScript, Node.js and cloud-scale backend systems. Open to full-stack and backend roles.",
+    "Professional portfolio of Ratchanon Kulpatrakorn, a passionate Full-Stack Developer specializing in building high-performance web applications, scalable backend systems, and modern user interfaces.",
   keywords: [
+    "Ratchanon Kulpatrakorn",
+    "Software Engineer",
     "Full-Stack Developer",
-    "React",
+    "Frontend",
+    "Backend",
     "Next.js",
+    "React",
     "TypeScript",
     "Node.js",
-    "PostgreSQL",
-    "Software Engineer",
+    "Portfolio",
   ],
   authors: [{ name: "Ratchanon Kulpatrakorn" }],
+  creator: "Ratchanon Kulpatrakorn",
   openGraph: {
-    title: "Ratchanon Kulpatrakorn | Full-Stack Developer",
-    description:
-      "Portfolio of Ratchanon Kulpatrakorn — Full-Stack Developer specializing in Next.js, TypeScript, and backend systems.",
     type: "website",
+    locale: "en_US",
+    url: "/",
+    title: "Ratchanon K. | Software Engineer",
+    description:
+      "Professional portfolio of Ratchanon Kulpatrakorn, a passionate Full-Stack Developer specializing in building high-performance web applications.",
+    siteName: "Ratchanon Kulpatrakorn Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ratchanon K. | Software Engineer",
+    description:
+      "Professional portfolio of Ratchanon Kulpatrakorn, a passionate Full-Stack Developer specializing in building high-performance web applications.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
