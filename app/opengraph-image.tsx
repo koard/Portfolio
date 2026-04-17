@@ -47,7 +47,7 @@ export default function Image() {
               marginRight: "32px",
             }}
           >
-            RK
+            💙
           </div>
           <div
             style={{
