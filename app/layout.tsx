@@ -18,7 +18,7 @@ const firaCode = Fira_Code({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ratchanon.space"),
   title: {
-    default: "Ratchanon K. | Software Engineer",
+    default: "Ratchanon K. | Full-Stack Developer",
     template: "%s | Ratchanon Kulpatrakorn",
   },
   description:
@@ -41,14 +41,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    title: "Ratchanon K. | Software Engineer",
+    title: "Ratchanon K. | Full-Stack Developer",
     description:
       "Professional portfolio of Ratchanon Kulpatrakorn, a passionate Full-Stack Developer specializing in building high-performance web applications.",
     siteName: "Ratchanon Kulpatrakorn Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ratchanon K. | Software Engineer",
+    title: "Ratchanon K. | Full-Stack Developer",
     description:
       "Professional portfolio of Ratchanon Kulpatrakorn, a passionate Full-Stack Developer specializing in building high-performance web applications.",
   },

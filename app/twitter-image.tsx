@@ -109,7 +109,7 @@ export default function Image() {
             }}
           >
             <div style={{ color: "#38bdf8", marginRight: "24px", fontWeight: 800 }}>/</div>
-            <div>Full-Stack Engineer</div>
+            <div>Full-Stack Developer</div>
           </div>
         </div>
       </div>
