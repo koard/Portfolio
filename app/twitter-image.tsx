@@ -65,7 +65,7 @@ export default function Image() {
           </div>
           <div
             style={{
-              fontSize: "30px",
+              fontSize: "40px",
               color: "#94a3b8",
               fontWeight: 600,
               letterSpacing: "0.2em",
@@ -95,7 +95,7 @@ export default function Image() {
             }}
           >
             <div style={{ color: "#f8fafc" }}>Ratchanon</div>
-            <div style={{ color: "#38bdf8" }}>Kulpatrakorn</div>
+            <div style={{ color: "#f8fafc" }}>Kulpatrakorn</div>
           </div>
 
           <div
@@ -108,7 +108,7 @@ export default function Image() {
               letterSpacing: "-0.01em",
             }}
           >
-            <div style={{ color: "#38bdf8", marginRight: "24px", fontWeight: 800 }}>/</div>
+            <div style={{ color: "#38bdf8", marginRight: "24px", fontWeight: 800 }}>&gt;</div>
             <div>Full-Stack Developer</div>
           </div>
         </div>
