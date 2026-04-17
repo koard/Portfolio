@@ -16,6 +16,7 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.ratchanon.space"),
   title: {
     default: "Ratchanon K. | Software Engineer",
     template: "%s | Ratchanon Kulpatrakorn",

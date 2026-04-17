@@ -504,9 +504,6 @@ section {
 }
 
 .timeline-period {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
   display: inline-flex;
   align-items: center;
   padding: 0.25rem 0.65rem;
@@ -519,6 +516,18 @@ section {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-family: 'Fira Code', monospace;
+  /* Mobile default: position above the title */
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 1000px) {
+  .timeline-period {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    margin-bottom: 0;
+  }
 }
 
 .timeline-role {
@@ -527,7 +536,14 @@ section {
   color: var(--text-primary);
   margin-top: 0;
   margin-bottom: 0.3rem;
-  padding-right: 8rem; /* Make room for the absolute period chip */
+  /* Reset padding on mobile */
+  padding-right: 0;
+}
+
+@media (min-width: 768px) {
+  .timeline-role {
+    padding-right: 8rem; /* Make room for the absolute period chip */
+  }
 }
 
 .timeline-company {

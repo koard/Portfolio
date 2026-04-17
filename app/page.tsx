@@ -342,7 +342,7 @@ export default function Home() {
         <a href="#projects" className="nav-link">Projects</a>
         <a href="#skills" className="nav-link">Skills</a>
         <a href="#education" className="nav-link">Education</a>
-        <a href="#contact" className="nav-cta">Hire Me ↗</a>
+        <a href="#contact" className="nav-link">Contact</a>
       </nav>
 
       <div className="page-wrapper">
