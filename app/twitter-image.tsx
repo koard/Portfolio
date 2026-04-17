@@ -22,7 +22,6 @@ export default function Image() {
           justifyContent: "center",
           alignItems: "flex-start",
           padding: "100px",
-          fontFamily: "Inter, sans-serif",
         }}
       >
         <div
@@ -46,10 +45,9 @@ export default function Image() {
               borderRadius: "24px",
               border: "2px solid #1e293b",
               marginRight: "32px",
-              boxShadow: "0 0 40px rgba(56, 189, 248, 0.2)",
             }}
           >
-            💙
+            RK
           </div>
           <div
             style={{
