@@ -74,8 +74,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${firaCode.variable} h-full`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full">
+      <body className="min-h-full" suppressHydrationWarning>
         {children}
         <Analytics />
       </body>

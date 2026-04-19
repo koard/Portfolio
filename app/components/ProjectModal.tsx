@@ -10,6 +10,7 @@ export interface ProjectHighlight {
 
 export interface ProjectDetail {
   icon: string;
+  badge?: string;
   title: string;
   subtitle: string;
   period: string;

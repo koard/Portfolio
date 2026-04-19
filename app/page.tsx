@@ -11,10 +11,10 @@ const experience = [
     company: "P Pella Company Limited",
     location: "Remote / Hybrid",
     bullets: [
-      "Architected and delivered a production-ready aquaculture management platform (Next.js 15, React 19, Node.js/Express) for Betagro, digitizing farm operations and reducing manual data entry by ~80%.",
-      "Designed scalable RESTful API using TypeScript and PostgreSQL with Prisma ORM; enforced type safety across all system layers, reducing runtime errors by ~65% through strict typing.",
-      "Implemented comprehensive test suite with Jest achieving 95%+ statement coverage; identified and prevented critical bugs before production through rigorous integration testing.",
-      "Managed end-to-end production deployment on Ubuntu with Nginx reverse proxy and PM2 process management; maintained 99.9% uptime during operation.",
+      "Owned the end-to-end development of an aquaculture management platform for a Betagro–Kasetsart University research initiative, transforming fragmented manual workflows into a unified system for farm tracking, weather-driven feeding, and survey management.",
+      "Engineered a scalable backend architecture with Node.js, TypeScript, PostgreSQL, and Prisma, improving type integrity and API reliability across the system while reducing runtime failures by approximately 65%.",
+      "Established a robust automated testing strategy with Jest, driving coverage beyond 95% and improving software quality through earlier identification of critical defects prior to production rollout.",
+      "Oversaw production deployment and runtime operations on Ubuntu infrastructure with Nginx reverse proxy and PM2 process management, maintaining 99.9% uptime and dependable service continuity.", 
     ],
     stack: ["Next.js", "React", "Node.js", "TypeScript", "PostgreSQL", "Prisma", "Jest", "Nginx", "PM2"],
     color: "blue",
@@ -25,9 +25,9 @@ const experience = [
     company: "The Old Phuket Karon Beach Resort",
     location: "Phuket, Thailand",
     bullets: [
-      "Developed full-stack Applicant Tracking System (React, TypeScript) streamlining HR recruitment workflows; reduced hiring process duration by 40% and eliminated manual spreadsheet maintenance.",
-      "Built real-time event check-in platform using Google Apps Script and Sheets; managed operations for 200+ attendees per event with 98% data accuracy and zero downtime.",
-      "Resolved critical network and device issues across hotel systems; maintained ~99.5% operational uptime and reduced IT support tickets by 35% month-over-month.",
+      "Developed a serverless event operations platform using Google Apps Script for an annual hospitality IT seminar with approximately 300 attendees from leading hotels across Southern Thailand, replacing manual registration with a QR-based self-service workflow that improved attendee throughput and reduced front-desk dependency.",
+      "Implemented a React and Firebase Applicant Tracking System that centralized applicant data and job posting workflows, providing HR with a more structured and manageable recruitment process.",
+      "Provided rapid-response technical support for critical local networking and device infrastructure, troubleshooting software and connectivity issues across internal and guest-facing services in a hospitality environment.",
     ],
     stack: ["React", "TypeScript", "Google Apps Script", "Google Sheets", "REST API"],
     color: "cyan",
@@ -37,6 +37,7 @@ const experience = [
 const projects: ProjectDetail[] = [
   {
     icon: "🐟",
+    badge: "Web App",
     title: "Smart Catfish Farm Management",
     subtitle: "Aquaculture Operations Platform",
     period: "Nov 2025 – Mar 2026",
@@ -67,6 +68,7 @@ const projects: ProjectDetail[] = [
   },
   {
     icon: "👥",
+    badge: "Web App",
     title: "HR Recruitment Workflow System",
     subtitle: "Applicant Tracking System",
     period: "Mar 2025 – Jun 2025",
@@ -95,6 +97,7 @@ const projects: ProjectDetail[] = [
   },
   {
     icon: "📋",
+    badge: "Web App",
     title: "Event Check-In Platform",
     subtitle: "Real-Time Attendance System",
     period: "Mar 2025 – Jun 2025",
@@ -125,6 +128,7 @@ const projects: ProjectDetail[] = [
   },
   {
     icon: "🛍️",
+    badge: "Web App",
     title: "FurniShop E-Commerce Platform",
     subtitle: "Full-Stack Furniture Store",
     period: "2026",
@@ -155,6 +159,7 @@ const projects: ProjectDetail[] = [
   },
   {
     icon: "🐄",
+    badge: "AI/ML",
     title: "DukeFarm Disease Analyzer",
     subtitle: "AI-Powered Agricultural Tool",
     period: "2025 – 2026",
@@ -183,6 +188,7 @@ const projects: ProjectDetail[] = [
   },
   {
     icon: "🎓",
+    badge: "Education",
     title: "Teaching Assistant — Python Programming",
     subtitle: "Prince of Songkla University",
     period: "2024 – 2025",
@@ -350,7 +356,7 @@ export default function Home() {
         {/* ── HERO ──────────────────────────────────────────────── */}
         <section id="hero">
           <div className="content-container">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "3rem", alignItems: "center" }}>
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 items-center">
               {/* Left */}
               <div>
                 <div className="hero-badge">
@@ -369,11 +375,9 @@ export default function Home() {
                 </p>
                 <div className="hero-ctas">
                   <a href="#contact" className="btn-primary">
-                    Get in Touch ✉
+                    Get in Touch
                   </a>
-                  <a href="#projects" className="btn-secondary">
-                    View Projects →
-                  </a>
+
                   <a
                     href="https://github.com/koard"
                     target="_blank"
@@ -401,7 +405,7 @@ export default function Home() {
               </div>
 
               {/* Right — Visual */}
-              <div className="hero-visual" style={{ minWidth: "280px" }}>
+              <div className="hero-visual hidden lg:flex" style={{ minWidth: "280px" }}>
                 <div className="avatar-ring">
                   <div className="avatar-inner">
                     <span>👨🏻‍💻</span>
@@ -461,18 +465,93 @@ export default function Home() {
               <div className="section-eyebrow">Portfolio</div>
               <h2 className="section-title">Featured Projects</h2>
             </div>
-            <div className="projects-grid" style={{ marginTop: "2.5rem" }}>
-              {projects.map((p, i) => (
+
+            {/* ── Featured (first) project ── */}
+            {projects.slice(0, 1).map((p) => (
+              <article
+                key={p.title}
+                className="project-featured fade-up"
+                style={{ marginTop: "2.5rem", transitionDelay: "0.05s" }}
+                role="button"
+                tabIndex={0}
+                aria-label={`View details for ${p.title}`}
+                onClick={() => setSelectedProject(p)}
+                onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setSelectedProject(p)}
+              >
+                {/* Glow orb behind featured card */}
+                <div className="featured-glow" aria-hidden="true" />
+
+                <div className="featured-body">
+                  {/* Left column */}
+                  <div className="featured-left">
+                    <div className="featured-top-row">
+                      {p.badge && (
+                        <span className="project-badge project-badge--featured">{p.badge}</span>
+                      )}
+                      <span className="featured-period">{p.period}</span>
+                    </div>
+
+                    <div className="featured-icon" aria-hidden="true">{p.icon}</div>
+                    <h3 className="featured-title">{p.title}</h3>
+                    <p className="featured-subtitle">{p.subtitle}</p>
+                    <p className="featured-desc">{p.description}</p>
+
+                    <div className="featured-stack">
+                      {p.stack.slice(0, 6).map((s) => (
+                        <span key={s} className="tech-tag">{s}</span>
+                      ))}
+                      {p.stack.length > 6 && (
+                        <span className="tech-tag">+{p.stack.length - 6} more</span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Right column — metrics */}
+                  {p.highlights.length > 0 && (
+                    <div className="featured-right">
+                      <div className="featured-metrics-label">Impact Metrics</div>
+                      <div className="featured-metrics">
+                        {p.highlights.map((h, hi) => (
+                          <div key={hi} className="featured-metric">
+                            <div className="featured-metric-value">{h.value}</div>
+                            <div className="featured-metric-label">{h.label}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* CTA */}
+                <div className="featured-cta">
+                  <span>View Full Case Study</span>
+                  <span className="project-cta-arrow">↗</span>
+                </div>
+              </article>
+            ))}
+
+            {/* ── Secondary projects grid ── */}
+            <div className="projects-grid" style={{ marginTop: "1.25rem" }}>
+              {projects.slice(1).map((p, i) => (
                 <article
-                  key={i}
+                  key={p.title}
                   className="project-card fade-up"
-                  style={{ transitionDelay: `${i * 0.08}s` }}
+                  style={{ transitionDelay: `${(i + 1) * 0.08}s` }}
                   role="button"
                   tabIndex={0}
                   aria-label={`View details for ${p.title}`}
                   onClick={() => setSelectedProject(p)}
                   onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setSelectedProject(p)}
                 >
+                  {/* Badge + icon row */}
+                  <div className="project-card-top">
+                    <span className="project-icon" aria-hidden="true">{p.icon}</span>
+                    {p.badge && (
+                      <span className={`project-badge project-badge--${p.badge.replace(/[^a-z]/gi, "").toLowerCase()}`}>
+                        {p.badge}
+                      </span>
+                    )}
+                  </div>
 
                   {/* Title */}
                   <h3 className="project-title">{p.title}</h3>
