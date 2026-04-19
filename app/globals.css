@@ -1067,6 +1067,13 @@ section {
   }
 }
 
+@media (max-width: 768px), (orientation: portrait) {
+  .avatar-ring,
+  .avatar-ring::before {
+    animation: none;
+  }
+}
+
 @media (max-width: 480px) {
   .contact-row {
     flex-direction: column;
