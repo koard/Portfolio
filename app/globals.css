@@ -1058,19 +1058,8 @@ section {
   .floating-chip {
     display: none;
   }
-  .avatar-ring {
-    width: 220px;
-    height: 220px;
-  }
   .hero-visual {
-    margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 768px), (orientation: portrait) {
-  .avatar-ring,
-  .avatar-ring::before {
-    animation: none;
+    display: none;
   }
 }
 
