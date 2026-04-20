@@ -54,7 +54,7 @@ const projects: ProjectDetail[] = [
     ],
     stack: ["Next.js", "React", "Node.js", "TypeScript", "PostgreSQL", "Prisma", "Jest", "Nginx", "PM2"],
     color: "blue",
-    github: "https://github.com/koard",
+    github: "https://github.com/koard/DukeFarm-Frontend",
     demo: "https://dukefarm.ku.ac.th/",
     screenshots: [
       "/dukefarm/1.png",
@@ -110,7 +110,7 @@ const projects: ProjectDetail[] = [
     ],
     stack: ["Next.js", "TypeScript", "Prisma", "Firebase", "Omise", "PostgreSQL"],
     color: "purple",
-    github: "https://github.com/koard",
+    github: "https://github.com/koard/FurniShop",
     demo: "https://gofurnishop.vercel.app/",
     screenshots: [
       "/furnishop/1.png",
@@ -169,9 +169,9 @@ const projects: ProjectDetail[] = [
       "Integrated health data visualization using custom charting libraries tailored for a clean, minimalist UI.",
       "Implemented local data persistence and offline-first capabilities using SQLite.",
     ],
-    stack: ["Flutter", "Dart", "SQLite", "Riverpod", "Health API"],
+    stack: ["Flutter", "Dart", "Firebase", "Riverpod", "Gemini API"],
     color: "pink",
-    github: "https://github.com/koard",
+    github: "https://github.com/koard/Personal-Wellness-Tracker",
     demo: null,
     screenshots: [
       "/wellness/1.png",
@@ -196,9 +196,9 @@ const projects: ProjectDetail[] = [
       "Developed a reliable backend service (NestJS) to proxy and cache data from legacy university APIs.",
       "Implemented a real-time booking system for university facilities to prevent double-booking.",
     ],
-    stack: ["React Native", "TypeScript", "NestJS", "PostgreSQL", "Firebase Cloud Messaging"],
+    stack: ["Flutter", "Dart", "FastAPI", "PostgreSQL", "Riverpod", "Google Maps API"],
     color: "blue",
-    github: "https://github.com/koard",
+    github: "https://github.com/koard/frontend_camhub",
     demo: null,
     screenshots: [
       "/campus/1.png",
@@ -234,7 +234,7 @@ const projects: ProjectDetail[] = [
       "Deployed the model inference engine using FastAPI to ensure low latency for incoming classification requests.",
       "Built a user-friendly frontend to visualize model confidence scores and highlight potentially suspicious text sections.",
     ],
-    stack: ["Python", "PyTorch", "Hugging Face", "FastAPI", "React", "Tailwind CSS"],
+    stack: ["Python", "PyTorch", "Kaggle", "Flask", "Tailwind CSS"],
     color: "orange",
     github: "https://github.com/koard",
     demo: null,
@@ -257,12 +257,14 @@ const projects: ProjectDetail[] = [
       "Designed and soldered custom circuitry integrating motor drivers, RFID modules, and status displays.",
       "Implemented a secure API communication layer to validate credentials against a remote server.",
     ],
-    stack: ["C++", "Arduino / ESP32", "IoT", "MQTT", "Node.js"],
+    stack: ["C++", "Python", "Odroid", "Arduino", "IoT", "SPI", "UART"],
     color: "yellow",
-    github: "https://github.com/koard",
+    github: null,
     demo: null,
     screenshots: [
-      "/embedded/1.png"
+      "/embedded/1.png",
+      "/embedded/2.png",
+      "/embedded/3.png"
     ],
     highlight: false,
   },
