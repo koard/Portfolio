@@ -14,7 +14,7 @@ const experience = [
       "Owned the end-to-end development of an aquaculture management platform for a Betagro–Kasetsart University research initiative, transforming fragmented manual workflows into a unified system for farm tracking, weather-driven feeding, and survey management.",
       "Engineered a scalable backend architecture with Node.js, TypeScript, PostgreSQL, and Prisma, improving type integrity and API reliability across the system while reducing runtime failures by approximately 65%.",
       "Established a robust automated testing strategy with Jest, driving coverage beyond 95% and improving software quality through earlier identification of critical defects prior to production rollout.",
-      "Oversaw production deployment and runtime operations on Ubuntu infrastructure with Nginx reverse proxy and PM2 process management, maintaining 99.9% uptime and dependable service continuity.", 
+      "Oversaw production deployment and runtime operations on Ubuntu infrastructure with Nginx reverse proxy and PM2 process management, maintaining 99.9% uptime and dependable service continuity.",
     ],
     stack: ["Next.js", "React", "Node.js", "TypeScript", "PostgreSQL", "Prisma", "Jest", "Nginx", "PM2"],
     color: "blue",
@@ -39,147 +39,202 @@ const projects: ProjectDetail[] = [
     icon: "🐟",
     badge: "Web App",
     title: "Smart Catfish Farm Management",
-    subtitle: "Aquaculture Operations Platform",
     period: "Nov 2025 – Mar 2026",
     description:
       "Mission-critical production platform for aquaculture operations. Real-time monitoring, automated scheduling, and enterprise-grade deployment.",
     longDescription:
-      "A production-deployed aquaculture management system commissioned for Betagro, one of Thailand\u2019s largest agribusiness conglomerates. The platform replaces manual paper-based operations with a centralized digital system covering real-time pond monitoring, automated feeding schedule management, water quality tracking, health incident logging, and staff task assignment. Built with a TypeScript-first architecture across a Next.js 15 frontend and Node.js/Express backend, with comprehensive automated testing and enterprise-grade Ubuntu/Nginx/PM2 deployment.",
-    role: "Full-Stack Developer (Lead)",
+      "A production-deployed aquaculture management platform developed for a joint Betagro–Kasetsart University research initiative. The platform replaces fragmented manual workflows with a unified digital system covering real-time pond monitoring, weather-driven feeding schedules, water quality tracking, and survey management. Engineered with a scalable Node.js/TypeScript and PostgreSQL backend, and a Next.js 15 frontend, ensuring strict type safety and reliable API performance. The system includes comprehensive automated testing and enterprise-grade Ubuntu/Nginx/PM2 deployment.",
+    role: "Full-Stack Developer Intern",
     status: "Production",
-    highlights: [
-      { label: "Data Entry Reduction", value: "~80%" },
-      { label: "Test Coverage", value: "95%+" },
-      { label: "Uptime", value: "99.9%" },
-      { label: "Runtime Errors \u2193", value: "~65%" },
-    ],
     achievements: [
-      "Architected and delivered a production-ready platform within a 5-month internship timeline, deployed live for an enterprise client (Betagro).",
-      "Designed a scalable RESTful API with TypeScript and PostgreSQL/Prisma ORM, enforcing strict type safety across all system layers to reduce runtime errors by ~65%.",
-      "Implemented a comprehensive Jest test suite achieving 95%+ statement coverage, catching critical bugs before production release.",
-      "Managed end-to-end Ubuntu production deployment with Nginx reverse proxy and PM2 process management, maintaining 99.9% uptime throughout operations.",
+      "Owned the end-to-end development of the platform within a 5-month internship, transforming manual workflows into a unified system.",
+      "Engineered a scalable backend architecture with Node.js, TypeScript, PostgreSQL, and Prisma, reducing runtime failures by approximately 65%.",
+      "Established a robust automated testing strategy with Jest, driving coverage beyond 95% prior to production rollout.",
+      "Oversaw production deployment and runtime operations on Ubuntu infrastructure with Nginx reverse proxy and PM2 process management, maintaining 99.9% uptime.",
     ],
     stack: ["Next.js", "React", "Node.js", "TypeScript", "PostgreSQL", "Prisma", "Jest", "Nginx", "PM2"],
     color: "blue",
-    github: null,
-    demo: null,
-    screenshots: [],
-    highlight: true,
-  },
-  {
-    icon: "👥",
-    badge: "Web App",
-    title: "HR Recruitment Workflow System",
-    subtitle: "Applicant Tracking System",
-    period: "Mar 2025 – Jun 2025",
-    description:
-      "End-to-end ATS replacing spreadsheet-based HR workflows. Multi-stage pipeline with role-based access and real-time status tracking.",
-    longDescription:
-      "A full-stack Applicant Tracking System (ATS) developed for The Old Phuket Karon Beach Resort, transforming a spreadsheet-based recruitment process into a structured digital workflow. The system covers the entire hiring lifecycle \u2014 from initial applicant submission and document collection through multi-stage interview scheduling, evaluation scoring, and final hiring decisions. Role-based access control ensures HR staff, interviewers, and managers each see relevant data, eliminating information overload and reducing coordination overhead.",
-    role: "Full-Stack Developer",
-    status: "Production",
-    highlights: [
-      { label: "Hiring Time Reduction", value: "40%" },
-      { label: "Spreadsheets Eliminated", value: "100%" },
-      { label: "Recruitment Stages", value: "Multi-stage" },
+    github: "https://github.com/koard",
+    demo: "https://dukefarm.ku.ac.th/",
+    screenshots: [
+      "/dukefarm/1.png",
+      "/dukefarm/2.png",
+      "/dukefarm/3.png",
+      "/dukefarm/4.png",
+      "/dukefarm/5.png",
+      "/dukefarm/6.png",
+      "/dukefarm/7.png"
     ],
-    achievements: [
-      "Reduced total hiring process duration by 40% through automated candidate status tracking and instant notifications at each pipeline stage.",
-      "Fully eliminated spreadsheet-based HR workflows, replacing them with a purpose-built digital platform with full audit trails.",
-      "Implemented role-based access control (RBAC) with distinct HR, interviewer, and manager views, improving both data security and workflow clarity.",
-    ],
-    stack: ["React", "TypeScript", "Node.js", "REST API"],
-    color: "cyan",
-    github: null,
-    demo: null,
-    screenshots: [],
     highlight: false,
   },
   {
-    icon: "📋",
+    icon: "📅",
     badge: "Web App",
-    title: "Event Check-In Platform",
-    subtitle: "Real-Time Attendance System",
+    title: "Event Operations Platform",
     period: "Mar 2025 – Jun 2025",
     description:
-      "Serverless real-time check-in for large hotel events. 200+ concurrent users, zero infrastructure cost, 98% data accuracy.",
+      "Serverless real-time check-in and operations system for large hotel events. 300+ concurrent users with zero infrastructure cost.",
     longDescription:
-      "A real-time event check-in and attendance management platform built for The Old Phuket Karon Beach Resort, handling large-scale hotel events with 200+ concurrent attendees per session. Built on Google Apps Script as a serverless backend with Google Sheets as a live database, the system provides instant check-in validation, real-time attendance dashboards, and post-event reporting \u2014 all with zero infrastructure cost. The UX was purpose-designed for non-technical hotel staff, prioritising speed and error prevention.",
-    role: "Developer",
+      "A real-time event check-in and attendance management platform built during my internship at The Old Phuket Karon Beach Resort. Designed for an annual hospitality IT seminar with approximately 300 attendees from leading hotels across Southern Thailand. Built on Google Apps Script as a serverless backend with Google Sheets as a live database, the system replaces manual registration with a QR-based self-service workflow that improves attendee throughput and reduces front-desk dependency. It provides instant check-in validation, live attendance dashboards, and post-event reporting — all with zero infrastructure cost.",
+    role: "IT Developer Intern",
     status: "Production",
-    highlights: [
-      { label: "Concurrent Users", value: "200+" },
-      { label: "Data Accuracy", value: "98%" },
-      { label: "Infra Cost", value: "\u00120" },
-      { label: "Downtime", value: "Zero" },
-    ],
     achievements: [
-      "Built a serverless real-time check-in system handling 200+ concurrent attendees with zero infrastructure cost using Google Apps Script.",
-      "Achieved 98% data accuracy through input validation and duplicate-check logic built directly into the check-in flow.",
-      "Optimised UX for non-technical hotel staff, reducing average check-in time per attendee to under 3 seconds.",
-      "Delivered zero downtime across all hotel events during the 4-month internship period.",
+      "Developed a serverless event operations platform using Google Apps Script to manage approximately 300 attendees.",
+      "Replaced manual registration with a QR-based self-service workflow, drastically improving attendee throughput and reducing front-desk dependency."
     ],
     stack: ["Google Apps Script", "Google Sheets", "JavaScript", "HTML/CSS"],
     color: "green",
     github: null,
     demo: null,
-    screenshots: [],
+    screenshots: [
+      "/event/1.png",
+      "/event/2.png"
+    ],
     highlight: false,
   },
   {
     icon: "🛍️",
     badge: "Web App",
-    title: "FurniShop E-Commerce Platform",
-    subtitle: "Full-Stack Furniture Store",
-    period: "2026",
+    title: "Furniture Shop Online",
+    period: "2025",
     description:
       "Full-featured e-commerce platform with Omise payment integration, admin dashboard, and Firebase Auth.",
     longDescription:
-      "A full-featured e-commerce platform for a furniture retail business, built with a focus on production readiness and payment security. The customer-facing storefront includes product catalog, advanced search and filtering, cart management, and a complete Omise-integrated checkout flow. An admin dashboard covers inventory management, order fulfillment tracking, revenue analytics, and customer management. Authentication is handled through Firebase with persistent sessions and role-based access separating customer and admin portals.",
+      "A full-featured e-commerce platform for a furniture retail business, built with a focus on production readiness and payment security. The customer-facing storefront includes a dynamic product catalog, advanced search and filtering, cart management, and a complete Omise-integrated checkout flow. An admin dashboard covers inventory management, order fulfillment tracking, revenue analytics, and customer management. Authentication is handled through Firebase with persistent sessions and role-based access separating customer and admin portals.",
     role: "Full-Stack Developer",
-    status: "In Development",
-    highlights: [
-      { label: "Payment Gateway", value: "Omise" },
-      { label: "Auth Provider", value: "Firebase" },
-      { label: "Admin Dashboard", value: "Full" },
-      { label: "PCI Consideration", value: "\u2713" },
-    ],
+    status: "Completed",
     achievements: [
       "Integrated Omise payment gateway with server-side charge processing and PCI compliance considerations for real card transactions.",
       "Built a full admin dashboard for inventory management, order fulfillment tracking, and revenue analytics.",
       "Implemented Firebase Authentication with persistent sessions and role-based access for both customer and admin portals.",
-      "Designed a normalised PostgreSQL schema with Prisma ORM supporting complex product filtering, inventory tracking, and full order history.",
     ],
     stack: ["Next.js", "TypeScript", "Prisma", "Firebase", "Omise", "PostgreSQL"],
     color: "purple",
     github: "https://github.com/koard",
-    demo: null,
-    screenshots: [],
+    demo: "https://gofurnishop.vercel.app/",
+    screenshots: [
+      "/furnishop/1.png",
+      "/furnishop/2.png",
+      "/furnishop/3.png",
+      "/furnishop/4.png",
+      "/furnishop/5.png",
+      "/furnishop/6.png",
+      "/furnishop/7.png",
+      "/furnishop/8.png",
+      "/furnishop/9.png"
+    ],
     highlight: false,
   },
   {
-    icon: "🐄",
-    badge: "AI/ML",
-    title: "DukeFarm Disease Analyzer",
-    subtitle: "AI-Powered Agricultural Tool",
-    period: "2025 – 2026",
+    icon: "🎮",
+    badge: "Web App",
+    title: "Game Store",
+    period: "2024",
     description:
-      "AI-powered livestock disease diagnostic platform with microservice architecture and ML inference via FastAPI.",
+      "Responsive digital game storefront featuring user libraries, reviews, and a robust search engine.",
     longDescription:
-      "An AI-powered disease diagnostic platform for agricultural use, designed to assist farm operators in early-stage livestock disease identification through image analysis and symptom reporting. The system uses a microservice architecture: a Node.js/Express REST API handles business logic and data management, while a FastAPI Python service runs ML model inference independently \u2014 enabling the compute-heavy ML workload to scale without affecting the core API. An analytics dashboard provides farm-level decision support with historical trend analysis.",
-    role: "Backend Developer",
-    status: "In Development",
-    highlights: [
-      { label: "Architecture", value: "Microservice" },
-      { label: "ML Runtime", value: "FastAPI" },
-      { label: "Input Types", value: "Image + Symptoms" },
-    ],
+      "A web-based digital game distribution platform allowing users to browse, purchase, and manage their game libraries. The platform features an intuitive UI inspired by modern gaming storefronts, complete with advanced search, genre filtering, user reviews, and promotional banners. The backend securely handles user accounts, wishlists, and transaction mockups. A rich media integration allows trailers and screenshots to be rendered smoothly within the product details.",
+    role: "Frontend Developer",
+    status: "Completed",
     achievements: [
-      "Designed a microservice architecture decoupling business logic (Node.js/Express) from ML inference (FastAPI/Python) for independent scaling.",
-      "Built RESTful API endpoints for disease analysis requests with image upload handling, full CRUD, and historical trend aggregation.",
-      "Implemented analytics endpoints supporting farm-level dashboards with disease frequency and seasonal pattern analysis.",
+      "Developed a highly responsive and animated frontend using React and Tailwind CSS.",
+      "Implemented complex state management for shopping carts and user wishlists.",
+      "Created a robust search and filtering system for finding games by genre, price, and rating.",
     ],
-    stack: ["Node.js", "Express", "TypeScript", "FastAPI", "Python", "PostgreSQL"],
+    stack: ["React", "JavaScript", "Tailwind CSS", "Node.js", "Express"],
+    color: "red",
+    github: "https://github.com/koard",
+    demo: null,
+    screenshots: [
+      "/game/1.png",
+      "/game/2.png",
+      "/game/3.png",
+      "/game/4.png"
+    ],
+    highlight: false,
+  },
+  {
+    icon: "🏃‍♂️",
+    badge: "Mobile App",
+    title: "Personal Wellness Tracker",
+    period: "2025",
+    description:
+      "Mobile application for tracking fitness activities, nutrition, and daily habits with rich data visualization.",
+    longDescription:
+      "A cross-platform mobile application developed with Flutter that helps users maintain healthy lifestyles by tracking their daily activities. The app includes features for logging workouts, recording meals, and tracking water intake and sleep. It visualizes personal health trends over time using interactive charts and graphs. By leveraging local storage and background processing, the app remains responsive and functional even without an internet connection.",
+    role: "Mobile App Developer",
+    status: "Completed",
+    achievements: [
+      "Built a highly performant cross-platform application capable of 60 FPS rendering using Flutter and Dart.",
+      "Integrated health data visualization using custom charting libraries tailored for a clean, minimalist UI.",
+      "Implemented local data persistence and offline-first capabilities using SQLite.",
+    ],
+    stack: ["Flutter", "Dart", "SQLite", "Riverpod", "Health API"],
+    color: "pink",
+    github: "https://github.com/koard",
+    demo: null,
+    screenshots: [
+      "/wellness/1.png",
+      "/wellness/2.png",
+      "/wellness/3.png"
+    ],
+    highlight: false,
+  },
+  {
+    icon: "🏫",
+    badge: "Mobile App",
+    title: "Smart Campus",
+    period: "2024",
+    description:
+      "Mobile ecosystem application integrating campus maps, facility booking, and academic schedules.",
+    longDescription:
+      "An integrated mobile application designed to simplify campus life for university students. The application combines interactive campus maps with real-time facility availability, allowing students to seamlessly find open study rooms or book sports facilities. It securely integrates with the university's academic portal to fetch class schedules, grades, and important announcements, sending timely push notifications to keep students informed and organized.",
+    role: "Mobile App Developer",
+    status: "Completed",
+    achievements: [
+      "Integrated mapping libraries to provide interactive, indoor-outdoor campus navigation.",
+      "Developed a reliable backend service (NestJS) to proxy and cache data from legacy university APIs.",
+      "Implemented a real-time booking system for university facilities to prevent double-booking.",
+    ],
+    stack: ["React Native", "TypeScript", "NestJS", "PostgreSQL", "Firebase Cloud Messaging"],
+    color: "blue",
+    github: "https://github.com/koard",
+    demo: null,
+    screenshots: [
+      "/campus/1.png",
+      "/campus/2.png",
+      "/campus/3.png",
+      "/campus/4.png",
+      "/campus/5.png",
+      "/campus/6.png",
+      "/campus/7.png",
+      "/campus/8.png",
+      "/campus/9.png",
+      "/campus/10.png",
+      "/campus/11.png",
+      "/campus/12.png",
+      "/campus/13.png",
+      "/campus/14.png"
+    ],
+    highlight: false,
+  },
+  {
+    icon: "🕵️‍♂️",
+    badge: "AI/ML",
+    title: "Fake News Detection",
+    period: "2025",
+    description:
+      "Web application powered by an NLP machine learning model to verify the authenticity of news articles.",
+    longDescription:
+      "A machine learning project wrapped in a lightweight web application that allows users to analyze news articles for misinformation. The core model employs Natural Language Processing (NLP) techniques, trained on a massive dataset of verified and false news. A clean web interface accepts URLs or text blobs, forwarding them to a Python FastAPI backend where the model processes the text, performs sentiment analysis, and returns a probability score of authenticity alongside flagged linguistic patterns.",
+    role: "Machine Learning Engineer",
+    status: "Completed",
+    achievements: [
+      "Trained and fine-tuned a transformer-based NLP model achieving 92% validation accuracy on a dataset of 50,000+ articles.",
+      "Deployed the model inference engine using FastAPI to ensure low latency for incoming classification requests.",
+      "Built a user-friendly frontend to visualize model confidence scores and highlight potentially suspicious text sections.",
+    ],
+    stack: ["Python", "PyTorch", "Hugging Face", "FastAPI", "React", "Tailwind CSS"],
     color: "orange",
     github: "https://github.com/koard",
     demo: null,
@@ -187,31 +242,49 @@ const projects: ProjectDetail[] = [
     highlight: false,
   },
   {
-    icon: "🎓",
-    badge: "Education",
-    title: "Teaching Assistant — Python Programming",
-    subtitle: "Prince of Songkla University",
-    period: "2024 – 2025",
+    icon: "🛡️",
+    badge: "Embedded",
+    title: "Automated Access Fee Collection",
+    period: "2024",
     description:
-      "TA for 60+ undergraduate engineering students. Led lab sessions, code reviews, and mentoring on software engineering fundamentals.",
+      "Embedded hardware system for automated ticketing and fee collection using RFID and microcontroller integration.",
     longDescription:
-      "Served as Teaching Assistant for a foundational Python programming course at Prince of Songkla University, supporting a class of 60+ undergraduate Computer Engineering students across two semesters. Responsibilities included facilitation of weekly lab sessions, code review and grading, one-on-one debugging support, and creation of supplementary learning materials. The focus was on building strong computational thinking, clean code habits, and professional development foundations from the earliest stage of students\u2019 engineering careers.",
-    role: "Teaching Assistant",
-    status: "Academic",
-    highlights: [
-      { label: "Students", value: "60+" },
-      { label: "Semesters", value: "2" },
-      { label: "Course Level", value: "Foundational" },
-    ],
+      "An embedded systems project designed to automate the entry tracking and fee collection for restricted areas or parking facilities. The hardware utilizes RFID readers, an Arduino/ESP32 microcontroller, and servo motors to physically control access barriers. When a valid card is scanned, the device interfaces with a local database via Wi-Fi to verify account balances, deduct the required fee, and actuate the barrier—all within milliseconds. An onboard LCD provides instant feedback to users.",
+    role: "Embedded Systems Engineer",
+    status: "Completed",
     achievements: [
-      "Led weekly lab sessions for 60+ students, providing hands-on Python programming guidance and real-time debugging support.",
-      "Developed debugging methodologies and code review rubrics to standardise assessment and improve the quality of student feedback.",
-      "Created supplementary learning materials including worked examples and problem sets aligned with software engineering best practices.",
-      "Mentored students on algorithmic thinking, code readability, and professional habits that carry beyond the course.",
+      "Programmed memory-constrained microcontrollers in C++ to handle sensor interrupts, hardware constraints, and network communications.",
+      "Designed and soldered custom circuitry integrating motor drivers, RFID modules, and status displays.",
+      "Implemented a secure API communication layer to validate credentials against a remote server.",
     ],
-    stack: ["Python", "Algorithm Design", "Mentoring", "Code Review", "Technical Writing"],
+    stack: ["C++", "Arduino / ESP32", "IoT", "MQTT", "Node.js"],
     color: "yellow",
-    github: null,
+    github: "https://github.com/koard",
+    demo: null,
+    screenshots: [
+      "/embedded/1.png"
+    ],
+    highlight: false,
+  },
+  {
+    icon: "🖥️",
+    badge: "HPC",
+    title: "Raspberry Pi Spark Cluster",
+    period: "2024",
+    description:
+      "A high-performance computing cluster built entirely from Raspberry Pi nodes running Apache Spark.",
+    longDescription:
+      "A High-Performance Computing (HPC) research project involving the construction and configuration of a distributed cluster using multiple Raspberry Pi single-board computers. The cluster is configured with Apache Hadoop and Apache Spark to process large datasets in parallel across the nodes. This project served as a physical sandbox for understanding distributed systems, cluster resource management, network topologies, and optimizing code for multi-node execution environments.",
+    role: "Systems Administrator / Data Engineer",
+    status: "Completed",
+    achievements: [
+      "Configured a physical Linux cluster with networked file systems (NFS) and passwordless SSH for seamless node integration.",
+      "Deployed Apache Hadoop (HDFS) and Apache Spark to enable distributed storage and parallel processing.",
+      "Successfully executed big data processing jobs, benchmarking performance scaling compared to single-node setups.",
+    ],
+    stack: ["Raspberry Pi", "Linux", "Apache Spark", "Hadoop (HDFS)", "Bash Scripting"],
+    color: "purple",
+    github: "https://github.com/koard",
     demo: null,
     screenshots: [],
     highlight: false,
@@ -463,80 +536,15 @@ export default function Home() {
           <div className="content-container">
             <div className="fade-up">
               <div className="section-eyebrow">Portfolio</div>
-              <h2 className="section-title">Featured Projects</h2>
+              <h2 className="section-title">Selected Projects</h2>
             </div>
 
-            {/* ── Featured (first) project ── */}
-            {projects.slice(0, 1).map((p) => (
-              <article
-                key={p.title}
-                className="project-featured fade-up"
-                style={{ marginTop: "2.5rem", transitionDelay: "0.05s" }}
-                role="button"
-                tabIndex={0}
-                aria-label={`View details for ${p.title}`}
-                onClick={() => setSelectedProject(p)}
-                onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setSelectedProject(p)}
-              >
-                {/* Glow orb behind featured card */}
-                <div className="featured-glow" aria-hidden="true" />
-
-                <div className="featured-body">
-                  {/* Left column */}
-                  <div className="featured-left">
-                    <div className="featured-top-row">
-                      {p.badge && (
-                        <span className="project-badge project-badge--featured">{p.badge}</span>
-                      )}
-                      <span className="featured-period">{p.period}</span>
-                    </div>
-
-                    <div className="featured-icon" aria-hidden="true">{p.icon}</div>
-                    <h3 className="featured-title">{p.title}</h3>
-                    <p className="featured-subtitle">{p.subtitle}</p>
-                    <p className="featured-desc">{p.description}</p>
-
-                    <div className="featured-stack">
-                      {p.stack.slice(0, 6).map((s) => (
-                        <span key={s} className="tech-tag">{s}</span>
-                      ))}
-                      {p.stack.length > 6 && (
-                        <span className="tech-tag">+{p.stack.length - 6} more</span>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Right column — metrics */}
-                  {p.highlights.length > 0 && (
-                    <div className="featured-right">
-                      <div className="featured-metrics-label">Impact Metrics</div>
-                      <div className="featured-metrics">
-                        {p.highlights.map((h, hi) => (
-                          <div key={hi} className="featured-metric">
-                            <div className="featured-metric-value">{h.value}</div>
-                            <div className="featured-metric-label">{h.label}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* CTA */}
-                <div className="featured-cta">
-                  <span>View Full Case Study</span>
-                  <span className="project-cta-arrow">↗</span>
-                </div>
-              </article>
-            ))}
-
-            {/* ── Secondary projects grid ── */}
-            <div className="projects-grid" style={{ marginTop: "1.25rem" }}>
-              {projects.slice(1).map((p, i) => (
+            <div className="projects-grid" style={{ marginTop: "2.5rem" }}>
+              {projects.map((p, i) => (
                 <article
                   key={p.title}
                   className="project-card fade-up"
-                  style={{ transitionDelay: `${(i + 1) * 0.08}s` }}
+                  style={{ transitionDelay: `${(i % 3) * 0.08}s` }}
                   role="button"
                   tabIndex={0}
                   aria-label={`View details for ${p.title}`}

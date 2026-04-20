@@ -1,24 +1,16 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
-/* ─── Types ──────────────────────────────────────────────────────── */
-export interface ProjectHighlight {
-  label: string;
-  value: string;
-}
+import { useEffect, useRef, useState } from "react";
 
 export interface ProjectDetail {
   icon: string;
   badge?: string;
   title: string;
-  subtitle: string;
   period: string;
   description: string;
   longDescription: string;
   role: string;
-  status: "Production" | "In Development" | "Academic" | "Personal";
-  highlights: ProjectHighlight[];
+  status: "Production" | "In Development" | "Academic" | "Personal" | "Completed";
   achievements: string[];
   stack: string[];
   color: string;
@@ -39,11 +31,18 @@ const STATUS_CONFIG: Record<string, { color: string; bg: string; border: string 
   "In Development":{ color: "#f59e0b", bg: "rgba(245,158,11,0.1)",  border: "rgba(245,158,11,0.3)"  },
   Academic:        { color: "#818cf8", bg: "rgba(129,140,248,0.1)", border: "rgba(129,140,248,0.3)" },
   Personal:        { color: "#60a5fa", bg: "rgba(96,165,250,0.1)",  border: "rgba(96,165,250,0.3)"  },
+  Completed:       { color: "#3b82f6", bg: "rgba(59,130,246,0.1)",  border: "rgba(59,130,246,0.3)"  },
 };
 
 /* ─── Component ──────────────────────────────────────────────────── */
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Reset image index when a new project is opened
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [project]);
 
   /* Lock body scroll + ESC to close */
   useEffect(() => {
@@ -103,7 +102,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 />
                 {project.status}
               </span>
-              <span className="modal-subtitle-chip">{project.subtitle}</span>
             </div>
 
             <h2 id="modal-project-title" className="modal-title">
@@ -130,19 +128,71 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </button>
         </div>
 
-        {/* ── Screenshots Area ────────────────────────────────────── */}
         <div className="modal-screenshots-area">
           {project.screenshots.length > 0 ? (
-            <div className="modal-screenshots-grid">
-              {project.screenshots.map((src, i) => (
-                <img
-                  key={i}
-                  src={src}
-                  alt={`${project.title} — screenshot ${i + 1}`}
-                  className="modal-screenshot-img"
-                  loading="lazy"
-                />
-              ))}
+            <div className="modal-carousel-container" style={{ position: "relative", width: "100%", borderRadius: "var(--radius-md)", overflow: "hidden", background: "var(--bg-card)", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid var(--border)", padding: "16px", minHeight: "300px" }}>
+              <img
+                src={project.screenshots[currentImageIndex]}
+                alt={`${project.title} — screenshot ${currentImageIndex + 1}`}
+                style={{ width: "100%", height: "auto", maxHeight: "65vh", objectFit: "contain", borderRadius: "8px" }}
+                loading="lazy"
+              />
+              
+              {project.screenshots.length > 1 && (
+                <>
+                  {/* Prev Button */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentImageIndex((prev) => (prev === 0 ? project.screenshots.length - 1 : prev - 1));
+                    }}
+                    style={{
+                      position: "absolute", left: "16px", top: "50%", transform: "translateY(-50%)",
+                      width: "44px", height: "44px", borderRadius: "50%",
+                      background: "rgba(0, 0, 0, 0.65)", color: "white", border: "1px solid rgba(255,255,255,0.15)",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      cursor: "pointer", zIndex: 10, backdropFilter: "blur(8px)",
+                      transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)"
+                    }}
+                    onMouseOver={(e) => { e.currentTarget.style.background = "var(--accent-primary)"; e.currentTarget.style.borderColor = "var(--accent-primary)"; e.currentTarget.style.transform = "translateY(-50%) scale(1.05)"; }}
+                    onMouseOut={(e) => { e.currentTarget.style.background = "rgba(0, 0, 0, 0.65)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; e.currentTarget.style.transform = "translateY(-50%) scale(1)"; }}
+                    aria-label="Previous screenshot"
+                  >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                  </button>
+
+                  {/* Next Button */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentImageIndex((prev) => (prev === project.screenshots.length - 1 ? 0 : prev + 1));
+                    }}
+                    style={{
+                      position: "absolute", right: "16px", top: "50%", transform: "translateY(-50%)",
+                      width: "44px", height: "44px", borderRadius: "50%",
+                      background: "rgba(0, 0, 0, 0.65)", color: "white", border: "1px solid rgba(255,255,255,0.15)",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      cursor: "pointer", zIndex: 10, backdropFilter: "blur(8px)",
+                      transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)"
+                    }}
+                    onMouseOver={(e) => { e.currentTarget.style.background = "var(--accent-primary)"; e.currentTarget.style.borderColor = "var(--accent-primary)"; e.currentTarget.style.transform = "translateY(-50%) scale(1.05)"; }}
+                    onMouseOut={(e) => { e.currentTarget.style.background = "rgba(0, 0, 0, 0.65)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; e.currentTarget.style.transform = "translateY(-50%) scale(1)"; }}
+                    aria-label="Next screenshot"
+                  >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </button>
+
+                  {/* Indicator */}
+                  <div style={{
+                    position: "absolute", bottom: "16px", left: "50%", transform: "translateX(-50%)",
+                    background: "rgba(0,0,0,0.7)", padding: "6px 14px", borderRadius: "20px",
+                    fontSize: "0.85rem", fontWeight: 600, color: "white", backdropFilter: "blur(4px)",
+                    border: "1px solid rgba(255,255,255,0.1)", letterSpacing: "0.05em"
+                  }}>
+                    {currentImageIndex + 1} / {project.screenshots.length}
+                  </div>
+                </>
+              )}
             </div>
           ) : (
             <div className="modal-screenshot-placeholder">
@@ -161,18 +211,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
           )}
         </div>
-
-        {/* ── Highlights / Metrics ────────────────────────────────── */}
-        {project.highlights.length > 0 && (
-          <div className="modal-highlights">
-            {project.highlights.map((h, i) => (
-              <div key={i} className="modal-highlight-item">
-                <div className="highlight-value">{h.value}</div>
-                <div className="highlight-label">{h.label}</div>
-              </div>
-            ))}
-          </div>
-        )}
 
         {/* ── Body ───────────────────────────────────────────────── */}
         <div className="modal-body">
