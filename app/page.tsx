@@ -16,7 +16,7 @@ const experience = [
       "Established a robust automated testing strategy with Jest, driving coverage beyond 95% and improving software quality through earlier identification of critical defects prior to production rollout.",
       "Oversaw production deployment and runtime operations on Ubuntu infrastructure with Nginx reverse proxy and PM2 process management, maintaining 99.9% uptime and dependable service continuity.",
     ],
-    stack: ["Next.js", "React", "Node.js", "TypeScript", "PostgreSQL", "Prisma", "Jest", "Nginx", "PM2"],
+    stack: ["Next.js", "Express", "PostgreSQL", "TypeScript", "Prisma", "Jest", "Nginx", "PM2"],
     color: "blue",
   },
   {
@@ -29,7 +29,7 @@ const experience = [
       "Implemented a React and Firebase Applicant Tracking System that centralized applicant data and job posting workflows, providing HR with a more structured and manageable recruitment process.",
       "Provided rapid-response technical support for critical local networking and device infrastructure, troubleshooting software and connectivity issues across internal and guest-facing services in a hospitality environment.",
     ],
-    stack: ["React", "TypeScript", "Google Apps Script", "Google Sheets", "REST API"],
+    stack: ["React", "Google Apps Script", "Google Sheets", "JavaScript", "HTML/CSS"],
     color: "cyan",
   },
 ];
@@ -52,7 +52,7 @@ const projects: ProjectDetail[] = [
       "Established a robust automated testing strategy with Jest, driving coverage beyond 95% prior to production rollout.",
       "Oversaw production deployment and runtime operations on Ubuntu infrastructure with Nginx reverse proxy and PM2 process management, maintaining 99.9% uptime.",
     ],
-    stack: ["Next.js", "React", "Express", "Node.js", "TypeScript", "PostgreSQL", "Prisma", "Jest", "Nginx", "PM2"],
+    stack: ["Next.js", "Express.js", "PostgreSQL", "TypeScript", "Prisma", "Jest", "Nginx", "PM2"],
     color: "blue",
     github: "https://github.com/koard/DukeFarm-Frontend",
     demo: "https://dukefarm.ku.ac.th/",
@@ -112,9 +112,9 @@ const projects: ProjectDetail[] = [
     ],
     stack: [
       "Flutter",
-      "Dart",
       "FastAPI",
       "PostgreSQL",
+      "Dart",
       "Riverpod",
       "JWT",
       "Google Maps Navigation SDK",
@@ -148,20 +148,32 @@ const projects: ProjectDetail[] = [
   {
     icon: "🛍️",
     badge: "Web App",
-    title: "Furniture Shop Online",
+    title: "Furniture Store",
     period: "2025",
     description:
-      "Full-featured e-commerce platform with Omise payment integration, admin dashboard, and Firebase Auth.",
+      "E-commerce web application prototype for online furniture sales, featuring storefront, cart, checkout UI, and admin dashboard.",
     longDescription:
-      "A full-featured e-commerce platform for a furniture retail business, built with a focus on production readiness and payment security. The customer-facing storefront includes a dynamic product catalog, advanced search and filtering, cart management, and a complete Omise-integrated checkout flow. An admin dashboard covers inventory management, order fulfillment tracking, revenue analytics, and customer management. Authentication is handled through Firebase with persistent sessions and role-based access separating customer and admin portals.",
+      "FurniShop is an academic e-commerce web application project designed for an online furniture business, covering both customer-facing storefront features and back-office administration. The project was planned with a hybrid rendering architecture using Next.js and TypeScript, combining SSR, SSG, and ISR to balance SEO, performance, and data freshness. The current prototype includes key user flows such as Home, Catalog with search/filter/sort, Product Detail, Sign In/Sign Up, Cart, Checkout UI, and an Admin Dashboard, initially implemented with realistic mock data to validate the user experience before connecting real services. The proposed full system architecture also includes GraphQL as a central API layer, MongoDB for flexible product and order data, JWT-based authentication with RBAC, and a server-side payment flow with webhook handling for Omise Sandbox. The project was deployed on Vercel and connected with GitHub to support production builds and preview deployments.",
     role: "Full-Stack Developer",
     status: "Academic",
     achievements: [
-      "Integrated Omise payment gateway with server-side charge processing and PCI compliance considerations for real card transactions.",
-      "Built a full admin dashboard for inventory management, order fulfillment tracking, and revenue analytics.",
-      "Implemented Firebase Authentication with persistent sessions and role-based access for both customer and admin portals.",
+      "Designed a hybrid-rendered e-commerce architecture with Next.js using SSR, SSG, and ISR to improve SEO, performance, and content freshness.",
+      "Built core storefront prototypes including Home, Catalog, Product Detail, Sign In/Sign Up, Cart, and Checkout pages based on a complete Figma design system.",
+      "Developed an Admin Dashboard prototype for managing products, orders, promotions, and business overview metrics.",
+      "Planned a backend architecture centered on GraphQL, MongoDB, JWT-based authentication, RBAC, and server-side payment/webhook workflows.",
+      "Deployed the project on Vercel with GitHub integration to support automatic production and preview deployments."
     ],
-    stack: ["Next.js", "TypeScript", "Prisma", "Firebase", "Omise", "PostgreSQL"],
+    stack: [
+      "Next.js",
+      "Firebase",
+      "MongoDB",
+      "TypeScript",
+      "Tailwind CSS",
+      "GraphQL",
+      "JWT",
+      "Omise",
+      "Vercel"
+    ],
     color: "purple",
     github: "https://github.com/koard/FurniShop",
     demo: "https://gofurnishop.vercel.app/",
@@ -181,20 +193,35 @@ const projects: ProjectDetail[] = [
   {
     icon: "🎮",
     badge: "Web App",
-    title: "Game Store",
+    title: "Games Store",
     period: "2024",
     description:
-      "Responsive digital game storefront featuring user libraries, reviews, and a robust search engine.",
+      "Web-based game store platform with point top-up, game purchasing, purchase history, and token-based download management.",
     longDescription:
-      "A web-based digital game distribution platform allowing users to browse, purchase, and manage their game libraries. The platform features an intuitive UI inspired by modern gaming storefronts, complete with advanced search, genre filtering, user reviews, and promotional banners. The backend securely handles user accounts, wishlists, and transaction mockups. A rich media integration allows trailers and screenshots to be rendered smoothly within the product details.",
-    role: "Frontend Developer",
+      "Games Store is an academic web application project developed as a digital game purchasing platform focused on convenience and secure transaction flows. The system allows users to browse available games, register and sign in, top up points, purchase games using their balance, review purchase history, and receive download tokens after completing purchases. The frontend was built with React using a component-based architecture, while the backend was developed with Strapi to manage content, users, transactions, and role-based access control. The project also included cloud deployment and infrastructure setup on Google Cloud Platform, covering App Engine, Cloud SQL, Cloud Storage, Compute Engine, Docker, Nginx, DNS, HTTPS configuration, and snapshot-based backup workflows.",
+    role: "Full-Stack Developer",
     status: "Academic",
     achievements: [
-      "Developed a highly responsive and animated frontend using React and Tailwind CSS.",
-      "Implemented complex state management for shopping carts and user wishlists.",
-      "Created a robust search and filtering system for finding games by genre, price, and rating.",
+      "Built the frontend of a game store web application with React, covering user flows such as browsing games, registration, login, profile, point top-up, and purchase history.",
+      "Integrated the frontend with a Strapi backend through RESTful APIs for retrieving game data, user information, and transaction-related records.",
+      "Worked with a backend architecture that uses Strapi RBAC to manage user roles, permissions, point transactions, and purchase workflows.",
+      "Supported deployment on Google Cloud Platform using App Engine, Cloud SQL, Cloud Storage, Compute Engine, Docker, and Nginx.",
+      "Configured production infrastructure features including static IP, DNS, HTTPS via Certbot, and scheduled snapshot-based backup for recovery readiness."
     ],
-    stack: ["React", "JavaScript", "Tailwind CSS", "Node.js", "Express"],
+    stack: [
+      "React",
+      "Strapi",
+      "PostgreSQL",
+      "REST API",
+      "TypeScript",
+      "Google Cloud Platform",
+      "App Engine",
+      "Cloud SQL",
+      "Compute Engine",
+      "Cloud Storage",
+      "Docker",
+      "Nginx"
+    ],
     color: "red",
     github: "https://github.com/koard",
     demo: null,
@@ -212,17 +239,25 @@ const projects: ProjectDetail[] = [
     title: "Personal Wellness Tracker",
     period: "2025",
     description:
-      "Mobile application for tracking fitness activities, nutrition, and daily habits with rich data visualization.",
+      "AI-powered wellness tracking app that generates personalized daily meals, activities, and habit reminders from each user’s profile.",
     longDescription:
-      "A cross-platform mobile application developed with Flutter that helps users maintain healthy lifestyles by tracking their daily activities. The app includes features for logging workouts, recording meals, and tracking water intake and sleep. It visualizes personal health trends over time using interactive charts and graphs. By leveraging local storage and background processing, the app remains responsive and functional even without an internet connection.",
+      "A Flutter-based personal wellness application designed to combine health tracking with AI-generated daily guidance. Users sign in with Firebase Authentication and complete a multi-step profile setup covering personal information, lifestyle, goals, fitness preferences, sleep, nutrition, and health conditions. Based on this profile, the app uses Gemini to generate personalized daily wellness content, including meal suggestions, activity recommendations, and habit reminders. The experience centers around an AI wellness dashboard and meal suggestion flow, with one-click meal logging, content regeneration, Firestore-based persistence, and improved loading, retry, and fallback handling for a smoother user experience. The app also supports both English and Thai through a localization system managed with Riverpod and persisted language preferences.",
     role: "Mobile App Developer",
     status: "Academic",
     achievements: [
-      "Built a highly performant cross-platform application capable of 60 FPS rendering using Flutter and Dart.",
-      "Integrated health data visualization using custom charting libraries tailored for a clean, minimalist UI.",
-      "Implemented local data persistence and offline-first capabilities using SQLite.",
+      "Built a Flutter wellness app with Firebase Authentication and Cloud Firestore for user profiles and daily AI-generated content.",
+      "Implemented an 8-step onboarding and profile analysis flow that generates personalized wellness plans after setup completion.",
+      "Developed an AI wellness dashboard with daily meal suggestions, activity recommendations, habit reminders, and one-click meal logging.",
+      "Improved user experience with loading animations, retry and fallback handling for Gemini API errors, and English/Thai localization."
     ],
-    stack: ["Flutter", "Dart", "Firebase", "Riverpod", "Gemini API"],
+    stack: [
+      "Flutter",
+      "Firebase",
+      "SQLite",
+      "Dart",
+      "Riverpod",
+      "Gemini API",
+    ],
     color: "pink",
     github: "https://github.com/koard/Personal-Wellness-Tracker",
     demo: null,
@@ -249,7 +284,7 @@ const projects: ProjectDetail[] = [
       "Built a news category classification model using Multinomial Naive Bayes to classify articles into POLITICS, EDUCATION, CRIME, and WELLNESS.",
       "Developed a Flask web application that accepts news text input and returns both fake/real prediction results and news category classification.",
     ],
-    stack: ["Python", "Flask", "scikit-learn", "Pandas", "TF-IDF", "Kaggle"],
+    stack: ["Python", "Flask", "Kaggle", "scikit-learn", "Pandas", "TF-IDF"],
     color: "orange",
     github: "https://github.com/koard",
     demo: null,
@@ -257,7 +292,7 @@ const projects: ProjectDetail[] = [
       "/fakenews/1.png",
       "/fakenews/2.png",
       "/fakenews/3.png",
-      "/fakenews/4.png",  
+      "/fakenews/4.png",
     ],
     highlight: false,
   },
@@ -267,17 +302,30 @@ const projects: ProjectDetail[] = [
     title: "Automated Access Fee Collection",
     period: "2024",
     description:
-      "Embedded hardware system for automated ticketing and fee collection using RFID and microcontroller integration.",
+      "Embedded access and fee collection system that records usage time through barcode scanning and calculates payment automatically with coin-based checkout.",
     longDescription:
-      "An embedded systems project designed to automate the entry tracking and fee collection for restricted areas or parking facilities. The hardware utilizes RFID readers, an Arduino/ESP32 microcontroller, and servo motors to physically control access barriers. When a valid card is scanned, the device interfaces with a local database via Wi-Fi to verify account balances, deduct the required fee, and actuate the barrier—all within milliseconds. An onboard LCD provides instant feedback to users.",
-    role: "Embedded Systems Engineer",
+      "Automated Access Fee Collection is an academic embedded systems project designed to automate user check-in, usage tracking, fee calculation, and coin-based payment for time-limited facility access. The system uses an Odroid-C4 as the main processing unit and an Arduino Uno for coin input detection. Users check in and check out by scanning a barcode on their student card through a webcam connected to the Odroid, which records entry and exit times, calculates usage duration, and computes the service fee automatically. During payment, the Arduino detects 1, 5, and 10 baht coins using speed sensor optocouplers and sends the detected values to the Odroid over UART. The system displays status, time, user count, and payment progress on a 16x2 LCD, uses a DS1307 RTC module for timekeeping, logs transaction data to CSV, and sends usage data to ThingSpeak for online monitoring and analysis.",
+    role: "Embedded Systems Developer",
     status: "Academic",
     achievements: [
-      "Programmed memory-constrained microcontrollers in C++ to handle sensor interrupts, hardware constraints, and network communications.",
-      "Designed and soldered custom circuitry integrating motor drivers, RFID modules, and status displays.",
-      "Implemented a secure API communication layer to validate credentials against a remote server.",
+      "Built a hybrid embedded system using Odroid-C4 and Arduino Uno to coordinate barcode-based check-in/check-out, fee calculation, and coin payment workflows.",
+      "Implemented automatic duration and cost calculation from recorded check-in and check-out times using RTC-based time tracking.",
+      "Developed coin detection logic for 1, 5, and 10 baht inputs with interrupt-driven Arduino programming and UART communication to the main processing unit.",
+      "Integrated LCD and LED status indicators to show readiness, user count, payment progress, and payment completion in real time.",
+      "Logged usage records to CSV and pushed occupancy data to ThingSpeak for online monitoring and later analysis."
     ],
-    stack: ["C++", "Python", "Odroid", "Arduino", "IoT", "SPI", "UART"],
+    stack: [
+      "Arduino Uno",
+      "Odroid-C4",
+      "C/C++",
+      "Python",
+      "UART",
+      "I2C",
+      "OpenCV",
+      "ThingSpeak",
+      "LCD 16x2",
+      "DS1307 RTC"
+    ],
     color: "yellow",
     github: null,
     demo: null,
@@ -589,9 +637,19 @@ export default function Home() {
                   {/* Description */}
                   <p className="project-desc">{p.description}</p>
 
+                  {/* Tech stack chips – top 3 */}
+                  <div className="project-stack-chips">
+                    {p.stack.slice(0, 3).map((tech) => (
+                      <span key={tech} className="project-stack-chip">{tech}</span>
+                    ))}
+                    {p.stack.length > 3 && (
+                      <span className="project-stack-chip project-stack-chip--more">+{p.stack.length - 3}</span>
+                    )}
+                  </div>
+
                   {/* Persistent CTA button */}
                   <div className="project-cta-btn" aria-hidden="true">
-                    <span>View Case Study</span>
+                    <span>See Details</span>
                     <span className="project-cta-arrow">↗</span>
                   </div>
                 </article>

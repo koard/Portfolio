@@ -1043,10 +1043,53 @@ section {
   color: var(--text-secondary);
   line-height: 1.7;
   flex: 1;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.9rem;
+}
+
+/* Tech stack chips */
+.project-stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-stack-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  background: rgba(59, 130, 246, 0.07);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #7eb8f7;
+  font-family: 'Fira Code', monospace;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.project-card:hover .project-stack-chip {
+  background: rgba(59, 130, 246, 0.13);
+  border-color: rgba(59, 130, 246, 0.35);
+  color: #a5d0ff;
+}
+
+.project-stack-chip--more {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+}
+
+.project-card:hover .project-stack-chip--more {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--text-secondary);
 }
 
 /* Persistent CTA button — always visible, lights up on hover */
+
 .project-cta-btn {
   display: flex;
   align-items: center;
