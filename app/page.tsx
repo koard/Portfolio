@@ -93,6 +93,44 @@ const projects: ProjectDetail[] = [
     highlight: false,
   },
   {
+    icon: "🏫",
+    badge: "Mobile App",
+    title: "Smart Campus",
+    period: "2024",
+    description:
+      "Mobile ecosystem application integrating campus maps, facility booking, and academic schedules.",
+    longDescription:
+      "An integrated mobile application designed to simplify campus life for university students. The application combines interactive campus maps with real-time facility availability, allowing students to seamlessly find open study rooms or book sports facilities. It securely integrates with the university's academic portal to fetch class schedules, grades, and important announcements, sending timely push notifications to keep students informed and organized.",
+    role: "Mobile App Developer",
+    status: "Academic",
+    achievements: [
+      "Integrated mapping libraries to provide interactive, indoor-outdoor campus navigation.",
+      "Developed a reliable backend service (NestJS) to proxy and cache data from legacy university APIs.",
+      "Implemented a real-time booking system for university facilities to prevent double-booking.",
+    ],
+    stack: ["Flutter", "Dart", "FastAPI", "PostgreSQL", "Riverpod", "Google Maps API"],
+    color: "blue",
+    github: "https://github.com/koard/frontend_camhub",
+    demo: null,
+    screenshots: [
+      "/campus/1.png",
+      "/campus/2.png",
+      "/campus/3.png",
+      "/campus/4.png",
+      "/campus/5.png",
+      "/campus/6.png",
+      "/campus/7.png",
+      "/campus/8.png",
+      "/campus/9.png",
+      "/campus/10.png",
+      "/campus/11.png",
+      "/campus/12.png",
+      "/campus/13.png",
+      "/campus/14.png"
+    ],
+    highlight: false,
+  },
+  {
     icon: "🛍️",
     badge: "Web App",
     title: "Furniture Shop Online",
@@ -102,7 +140,7 @@ const projects: ProjectDetail[] = [
     longDescription:
       "A full-featured e-commerce platform for a furniture retail business, built with a focus on production readiness and payment security. The customer-facing storefront includes a dynamic product catalog, advanced search and filtering, cart management, and a complete Omise-integrated checkout flow. An admin dashboard covers inventory management, order fulfillment tracking, revenue analytics, and customer management. Authentication is handled through Firebase with persistent sessions and role-based access separating customer and admin portals.",
     role: "Full-Stack Developer",
-    status: "Completed",
+    status: "Academic",
     achievements: [
       "Integrated Omise payment gateway with server-side charge processing and PCI compliance considerations for real card transactions.",
       "Built a full admin dashboard for inventory management, order fulfillment tracking, and revenue analytics.",
@@ -135,7 +173,7 @@ const projects: ProjectDetail[] = [
     longDescription:
       "A web-based digital game distribution platform allowing users to browse, purchase, and manage their game libraries. The platform features an intuitive UI inspired by modern gaming storefronts, complete with advanced search, genre filtering, user reviews, and promotional banners. The backend securely handles user accounts, wishlists, and transaction mockups. A rich media integration allows trailers and screenshots to be rendered smoothly within the product details.",
     role: "Frontend Developer",
-    status: "Completed",
+    status: "Academic",
     achievements: [
       "Developed a highly responsive and animated frontend using React and Tailwind CSS.",
       "Implemented complex state management for shopping carts and user wishlists.",
@@ -163,7 +201,7 @@ const projects: ProjectDetail[] = [
     longDescription:
       "A cross-platform mobile application developed with Flutter that helps users maintain healthy lifestyles by tracking their daily activities. The app includes features for logging workouts, recording meals, and tracking water intake and sleep. It visualizes personal health trends over time using interactive charts and graphs. By leveraging local storage and background processing, the app remains responsive and functional even without an internet connection.",
     role: "Mobile App Developer",
-    status: "Completed",
+    status: "Academic",
     achievements: [
       "Built a highly performant cross-platform application capable of 60 FPS rendering using Flutter and Dart.",
       "Integrated health data visualization using custom charting libraries tailored for a clean, minimalist UI.",
@@ -181,44 +219,6 @@ const projects: ProjectDetail[] = [
     highlight: false,
   },
   {
-    icon: "🏫",
-    badge: "Mobile App",
-    title: "Smart Campus",
-    period: "2024",
-    description:
-      "Mobile ecosystem application integrating campus maps, facility booking, and academic schedules.",
-    longDescription:
-      "An integrated mobile application designed to simplify campus life for university students. The application combines interactive campus maps with real-time facility availability, allowing students to seamlessly find open study rooms or book sports facilities. It securely integrates with the university's academic portal to fetch class schedules, grades, and important announcements, sending timely push notifications to keep students informed and organized.",
-    role: "Mobile App Developer",
-    status: "Completed",
-    achievements: [
-      "Integrated mapping libraries to provide interactive, indoor-outdoor campus navigation.",
-      "Developed a reliable backend service (NestJS) to proxy and cache data from legacy university APIs.",
-      "Implemented a real-time booking system for university facilities to prevent double-booking.",
-    ],
-    stack: ["Flutter", "Dart", "FastAPI", "PostgreSQL", "Riverpod", "Google Maps API"],
-    color: "blue",
-    github: "https://github.com/koard/frontend_camhub",
-    demo: null,
-    screenshots: [
-      "/campus/1.png",
-      "/campus/2.png",
-      "/campus/3.png",
-      "/campus/4.png",
-      "/campus/5.png",
-      "/campus/6.png",
-      "/campus/7.png",
-      "/campus/8.png",
-      "/campus/9.png",
-      "/campus/10.png",
-      "/campus/11.png",
-      "/campus/12.png",
-      "/campus/13.png",
-      "/campus/14.png"
-    ],
-    highlight: false,
-  },
-  {
     icon: "🕵️‍♂️",
     badge: "AI/ML",
     title: "Fake News Detection",
@@ -228,7 +228,7 @@ const projects: ProjectDetail[] = [
     longDescription:
       "A machine learning project wrapped in a lightweight web application that allows users to analyze news articles for misinformation. The core model employs Natural Language Processing (NLP) techniques, trained on a massive dataset of verified and false news. A clean web interface accepts URLs or text blobs, forwarding them to a Python FastAPI backend where the model processes the text, performs sentiment analysis, and returns a probability score of authenticity alongside flagged linguistic patterns.",
     role: "Machine Learning Engineer",
-    status: "Completed",
+    status: "Academic",
     achievements: [
       "Trained and fine-tuned a transformer-based NLP model achieving 92% validation accuracy on a dataset of 50,000+ articles.",
       "Deployed the model inference engine using FastAPI to ensure low latency for incoming classification requests.",
@@ -251,7 +251,7 @@ const projects: ProjectDetail[] = [
     longDescription:
       "An embedded systems project designed to automate the entry tracking and fee collection for restricted areas or parking facilities. The hardware utilizes RFID readers, an Arduino/ESP32 microcontroller, and servo motors to physically control access barriers. When a valid card is scanned, the device interfaces with a local database via Wi-Fi to verify account balances, deduct the required fee, and actuate the barrier—all within milliseconds. An onboard LCD provides instant feedback to users.",
     role: "Embedded Systems Engineer",
-    status: "Completed",
+    status: "Academic",
     achievements: [
       "Programmed memory-constrained microcontrollers in C++ to handle sensor interrupts, hardware constraints, and network communications.",
       "Designed and soldered custom circuitry integrating motor drivers, RFID modules, and status displays.",
@@ -278,7 +278,7 @@ const projects: ProjectDetail[] = [
     longDescription:
       "A High-Performance Computing (HPC) research project involving the construction and configuration of a distributed cluster using multiple Raspberry Pi single-board computers. The cluster is configured with Apache Hadoop and Apache Spark to process large datasets in parallel across the nodes. This project served as a physical sandbox for understanding distributed systems, cluster resource management, network topologies, and optimizing code for multi-node execution environments.",
     role: "Systems Administrator / Data Engineer",
-    status: "Completed",
+    status: "Academic",
     achievements: [
       "Configured a physical Linux cluster with networked file systems (NFS) and passwordless SSH for seamless node integration.",
       "Deployed Apache Hadoop (HDFS) and Apache Spark to enable distributed storage and parallel processing.",
@@ -300,7 +300,7 @@ const skillGroups = [
     color: "#60a5fa",
     bg: "rgba(59,130,246,0.08)",
     border: "rgba(59,130,246,0.2)",
-    skills: ["React", "Next.js", "Vite", "TypeScript", "JavaScript", "Tailwind CSS", "Responsive Design"],
+    skills: ["React", "Next.js", "HTML", "CSS", "TypeScript", "JavaScript", "Tailwind CSS", "Responsive Design"],
   },
   {
     icon: "📱",
