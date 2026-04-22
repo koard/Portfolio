@@ -286,7 +286,7 @@ const projects: ProjectDetail[] = [
     ],
     stack: ["Python", "Flask", "Kaggle", "scikit-learn", "Pandas", "TF-IDF"],
     color: "orange",
-    github: "https://github.com/koard",
+    github: null,
     demo: null,
     screenshots: [
       "/fakenews/1.png",
@@ -352,11 +352,15 @@ const projects: ProjectDetail[] = [
       "Deployed Apache Hadoop (HDFS) and Apache Spark to enable distributed storage and parallel processing.",
       "Successfully executed big data processing jobs, benchmarking performance scaling compared to single-node setups.",
     ],
-    stack: ["Raspberry Pi", "Linux", "Apache Spark", "Apache Hadoop", "Slurm", "Bash", "Ansible"],
+    stack: ["Raspberry Pi", "Ubuntu", "Apache Spark", "Hadoop HDFS", "Bash", "Scala", "Java", "Python"],
     color: "purple",
-    github: "https://github.com/koard",
+    github: null,
     demo: null,
-    screenshots: [],
+    screenshots: [
+      "/hpc/1.png",
+      "/hpc/2.png",
+      "/hpc/3.png"
+    ],
     highlight: false,
   },
 ];
