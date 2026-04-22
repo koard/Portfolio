@@ -41,7 +41,7 @@ const projects: ProjectDetail[] = [
     title: "Smart Catfish Farm Management",
     period: "Nov 2025 – Mar 2026",
     description:
-      "Mission-critical production platform for aquaculture operations. Real-time monitoring, automated scheduling, and enterprise-grade deployment.",
+      "Production aquaculture platform with real-time pond monitoring, automated feeding schedules, and enterprise-grade Nginx/PM2 deployment on Ubuntu.",
     longDescription:
       "A production-deployed aquaculture management platform developed for a joint Betagro–Kasetsart University research initiative. The platform replaces fragmented manual workflows with a unified digital system covering real-time pond monitoring, weather-driven feeding schedules, water quality tracking, and survey management. Engineered with a scalable Node.js/TypeScript and PostgreSQL backend, and a Next.js 15 frontend, ensuring strict type safety and reliable API performance. The system includes comprehensive automated testing and enterprise-grade Ubuntu/Nginx/PM2 deployment.",
     role: "Full-Stack Developer Intern",
@@ -73,7 +73,7 @@ const projects: ProjectDetail[] = [
     title: "Event Operations Platform",
     period: "Mar 2025 – Jun 2025",
     description:
-      "Serverless real-time check-in and operations system for large hotel events. 300+ concurrent users with zero infrastructure cost.",
+      "Serverless QR-based check-in platform for a 300-attendee hospitality seminar, with live attendance dashboards and zero infrastructure cost.",
     longDescription:
       "A real-time event check-in and attendance management platform built during my internship at The Old Phuket Karon Beach Resort. Designed for an annual hospitality IT seminar with approximately 300 attendees from leading hotels across Southern Thailand. Built on Google Apps Script as a serverless backend with Google Sheets as a live database, the system replaces manual registration with a QR-based self-service workflow that improves attendee throughput and reduces front-desk dependency. It provides instant check-in validation, live attendance dashboards, and post-event reporting — all with zero infrastructure cost.",
     role: "IT Developer Intern",
@@ -98,7 +98,7 @@ const projects: ProjectDetail[] = [
     title: "Campus Life Hub",
     period: "2024",
     description:
-      "Android mobile application that brings together campus announcements, course enrollment, schedules, events, bookmarks, and navigation in one platform.",
+      "Flutter app that unifies campus services (course enrollment, announcements, events, schedules, and turn-by-turn Google Maps navigation).",
     longDescription:
       "Campus Life Hub is an academic mobile application developed to simplify student life by centralizing essential campus services in a single Android app. The application allows users to browse announcements, bookmark important posts, enroll in courses, view class schedules, explore university events, manage profiles, and navigate campus locations more conveniently. The frontend was built with Flutter and connected to a FastAPI backend via REST APIs, with PostgreSQL used to store system data such as users, announcements, courses, enrollments, events, locations, and rooms. The system also supports JWT-based authentication, basic offline access for selected saved information, event registration and cancellation, and turn-by-turn campus navigation through Google Maps Navigation SDK.",
     role: "Mobile App Developer",
@@ -151,7 +151,7 @@ const projects: ProjectDetail[] = [
     title: "Furniture Store",
     period: "2025",
     description:
-      "E-commerce web application prototype for online furniture sales, featuring storefront, cart, checkout UI, and admin dashboard.",
+      "Full e-commerce prototype covering a customer storefront, catalog, cart, checkout UI, and admin dashboard, built with Next.js and TypeScript.",
     longDescription:
       "FurniShop is an academic e-commerce web application project designed for an online furniture business, covering both customer-facing storefront features and back-office administration. The project was planned with a hybrid rendering architecture using Next.js and TypeScript, combining SSR, SSG, and ISR to balance SEO, performance, and data freshness. The current prototype includes key user flows such as Home, Catalog with search/filter/sort, Product Detail, Sign In/Sign Up, Cart, Checkout UI, and an Admin Dashboard, initially implemented with realistic mock data to validate the user experience before connecting real services. The proposed full system architecture also includes GraphQL as a central API layer, MongoDB for flexible product and order data, JWT-based authentication with RBAC, and a server-side payment flow with webhook handling for Omise Sandbox. The project was deployed on Vercel and connected with GitHub to support production builds and preview deployments.",
     role: "Full-Stack Developer",
@@ -196,7 +196,7 @@ const projects: ProjectDetail[] = [
     title: "Games Store",
     period: "2024",
     description:
-      "Web-based game store platform with point top-up, game purchasing, purchase history, and token-based download management.",
+      "Web game store with point top-up, game purchasing, purchase history, and token-based downloads. Deployed on Google Cloud with Docker and Nginx.",
     longDescription:
       "Games Store is an academic web application project developed as a digital game purchasing platform focused on convenience and secure transaction flows. The system allows users to browse available games, register and sign in, top up points, purchase games using their balance, review purchase history, and receive download tokens after completing purchases. The frontend was built with React using a component-based architecture, while the backend was developed with Strapi to manage content, users, transactions, and role-based access control. The project also included cloud deployment and infrastructure setup on Google Cloud Platform, covering App Engine, Cloud SQL, Cloud Storage, Compute Engine, Docker, Nginx, DNS, HTTPS configuration, and snapshot-based backup workflows.",
     role: "Full-Stack Developer",
@@ -239,7 +239,7 @@ const projects: ProjectDetail[] = [
     title: "Personal Wellness Tracker",
     period: "2025",
     description:
-      "AI-powered wellness tracking app that generates personalized daily meals, activities, and habit reminders from each user’s profile.",
+      "Flutter wellness app powered by Gemini AI, generating personalized daily meal plans, activity recommendations, and habit reminders from your profile.",
     longDescription:
       "A Flutter-based personal wellness application designed to combine health tracking with AI-generated daily guidance. Users sign in with Firebase Authentication and complete a multi-step profile setup covering personal information, lifestyle, goals, fitness preferences, sleep, nutrition, and health conditions. Based on this profile, the app uses Gemini to generate personalized daily wellness content, including meal suggestions, activity recommendations, and habit reminders. The experience centers around an AI wellness dashboard and meal suggestion flow, with one-click meal logging, content regeneration, Firestore-based persistence, and improved loading, retry, and fallback handling for a smoother user experience. The app also supports both English and Thai through a localization system managed with Riverpod and persisted language preferences.",
     role: "Mobile App Developer",
@@ -254,9 +254,9 @@ const projects: ProjectDetail[] = [
       "Flutter",
       "Firebase",
       "SQLite",
-      "Dart",
-      "Riverpod",
       "Gemini API",
+      "Dart",
+      "Riverpod"
     ],
     color: "pink",
     github: "https://github.com/koard/Personal-Wellness-Tracker",
@@ -274,7 +274,7 @@ const projects: ProjectDetail[] = [
     title: "Fake News Detection",
     period: "2025",
     description:
-      "Web application that detects fake news and classifies news categories using machine learning and NLP techniques.",
+      "ML-powered web app that predicts news authenticity and classifies articles into POLITICS, EDUCATION, CRIME, and WELLNESS using NLP and scikit-learn.",
     longDescription:
       "An academic machine learning project developed as a web application for detecting whether a news article is real or fake, while also classifying it into categories including POLITICS, EDUCATION, CRIME, and WELLNESS. The project began by comparing Logistic Regression, Decision Tree Classifier, and Random Forest Classifier on the same fake news dataset, where Decision Tree achieved the best accuracy and was selected for the final fake news detection model. Text preprocessing and TF-IDF vectorization were applied before training the models. A separate Multinomial Naive Bayes model was also trained on a news category dataset to predict article categories. Both trained models and vectorizers were integrated into a Flask-based web application, allowing users to input news text and receive both authenticity and category predictions in a simple interface.",
     role: "Machine Learning Developer",
@@ -302,7 +302,7 @@ const projects: ProjectDetail[] = [
     title: "Automated Access Fee Collection",
     period: "2024",
     description:
-      "Embedded access and fee collection system that records usage time through barcode scanning and calculates payment automatically with coin-based checkout.",
+      "Embedded facility access system with barcode check-in, automatic usage-time fee calculation, and Arduino-driven coin payment detection via UART.",
     longDescription:
       "Automated Access Fee Collection is an academic embedded systems project designed to automate user check-in, usage tracking, fee calculation, and coin-based payment for time-limited facility access. The system uses an Odroid-C4 as the main processing unit and an Arduino Uno for coin input detection. Users check in and check out by scanning a barcode on their student card through a webcam connected to the Odroid, which records entry and exit times, calculates usage duration, and computes the service fee automatically. During payment, the Arduino detects 1, 5, and 10 baht coins using speed sensor optocouplers and sends the detected values to the Odroid over UART. The system displays status, time, user count, and payment progress on a 16x2 LCD, uses a DS1307 RTC module for timekeeping, logs transaction data to CSV, and sends usage data to ThingSpeak for online monitoring and analysis.",
     role: "Embedded Systems Developer",
@@ -342,7 +342,7 @@ const projects: ProjectDetail[] = [
     title: "Raspberry Pi Spark Cluster",
     period: "2024",
     description:
-      "A high-performance computing cluster built entirely from Raspberry Pi nodes running Apache Spark.",
+      "Physical HPC cluster of networked Raspberry Pi nodes running Apache Hadoop and Spark to process large datasets across a distributed multi-node.",
     longDescription:
       "A High-Performance Computing (HPC) research project involving the construction and configuration of a distributed cluster using multiple Raspberry Pi single-board computers. The cluster is configured with Apache Hadoop and Apache Spark to process large datasets in parallel across the nodes. This project served as a physical sandbox for understanding distributed systems, cluster resource management, network topologies, and optimizing code for multi-node execution environments.",
     role: "Systems Administrator / Data Engineer",
@@ -352,7 +352,7 @@ const projects: ProjectDetail[] = [
       "Deployed Apache Hadoop (HDFS) and Apache Spark to enable distributed storage and parallel processing.",
       "Successfully executed big data processing jobs, benchmarking performance scaling compared to single-node setups.",
     ],
-    stack: ["Raspberry Pi", "Linux", "Apache Spark", "Hadoop (HDFS)", "Bash Scripting"],
+    stack: ["Raspberry Pi", "Linux", "Apache Spark", "Apache Hadoop", "Slurm", "Bash", "Ansible"],
     color: "purple",
     github: "https://github.com/koard",
     demo: null,
@@ -637,13 +637,13 @@ export default function Home() {
                   {/* Description */}
                   <p className="project-desc">{p.description}</p>
 
-                  {/* Tech stack chips – top 3 */}
+                  {/* Tech stack chips – top 5 */}
                   <div className="project-stack-chips">
-                    {p.stack.slice(0, 3).map((tech) => (
+                    {p.stack.slice(0, 5).map((tech) => (
                       <span key={tech} className="project-stack-chip">{tech}</span>
                     ))}
-                    {p.stack.length > 3 && (
-                      <span className="project-stack-chip project-stack-chip--more">+{p.stack.length - 3}</span>
+                    {p.stack.length > 5 && (
+                      <span className="project-stack-chip project-stack-chip--more">+{p.stack.length - 5}</span>
                     )}
                   </div>
 
