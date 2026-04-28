@@ -20,6 +20,18 @@ const experience = [
     color: "blue",
   },
   {
+    period: "Jun 2025 – Nov 2025",
+    role: "Teaching Assistant - Basic Engineering Programming",
+    company: "Prince of Songkla University",
+    location: "Songkhla, Thailand",
+    bullets: [
+      "Mentored 60+ first-year students in Python programming labs, translating fundamental concepts into practical guidance for debugging, code structure, and problem-solving.",
+      "Evaluated lab assignments with a focus on functional correctness, code quality, and solution logic, providing actionable feedback to help students improve their programming discipline.",
+    ],
+    stack: ["Python"],
+    color: "purple",
+  },
+  {
     period: "Mar 2025 – Jun 2025",
     role: "IT Developer Intern",
     company: "The Old Phuket Karon Beach Resort",
