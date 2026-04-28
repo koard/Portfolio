@@ -11,7 +11,7 @@ const experience = [
     company: "P Pella Company Limited",
     location: "Remote / Hybrid",
     bullets: [
-      "Owned the end-to-end development of an aquaculture management platform for a Betagro–Kasetsart University research initiative, transforming fragmented manual workflows into a unified system for farm tracking, weather-driven feeding, and survey management.",
+      "Owned the end-to-end development of an aquaculture management platform for a Betagro-Kasetsart University research initiative, transforming fragmented manual workflows into a unified system, through responsive interfaces and dashboard workflows using Next.js.",
       "Engineered a scalable backend architecture with Node.js, TypeScript, PostgreSQL, and Prisma, improving type integrity and API reliability across the system while reducing runtime failures by approximately 65%.",
       "Established a robust automated testing strategy with Jest, driving coverage beyond 95% and improving software quality through earlier identification of critical defects prior to production rollout.",
       "Oversaw production deployment and runtime operations on Ubuntu infrastructure with Nginx reverse proxy and PM2 process management, maintaining 99.9% uptime and dependable service continuity.",
@@ -38,7 +38,7 @@ const experience = [
     location: "Phuket, Thailand",
     bullets: [
       "Developed a serverless event operations platform using Google Apps Script for an annual hospitality IT seminar with approximately 300 attendees from leading hotels across Southern Thailand, replacing manual registration with a QR-based self-service workflow that improved attendee throughput and reduced front-desk dependency.",
-      "Implemented a React and Firebase Applicant Tracking System that centralized applicant data and job posting workflows, providing HR with a more structured and manageable recruitment process.",
+      "Implemented an Applicant Tracking System using Next.js and NestJS to centralize applicant data and job posting workflows, enabling HR to manage recruitment processes more efficiently and systematically.",
       "Provided rapid-response technical support for critical local networking and device infrastructure, troubleshooting software and connectivity issues across internal and guest-facing services in a hospitality environment.",
     ],
     stack: ["React", "Google Apps Script", "Google Sheets", "JavaScript", "HTML/CSS"],
@@ -379,12 +379,20 @@ const projects: ProjectDetail[] = [
 
 const skillGroups = [
   {
+    icon: "💻",
+    title: "Programming Languages",
+    color: "#fbbf24",
+    bg: "rgba(251,191,36,0.08)",
+    border: "rgba(251,191,36,0.2)",
+    skills: ["TypeScript", "JavaScript", "Dart", "Python", "R", "PHP", "C/C++"],
+  },
+  {
     icon: "⚛️",
     title: "Frontend",
     color: "#60a5fa",
     bg: "rgba(59,130,246,0.08)",
     border: "rgba(59,130,246,0.2)",
-    skills: ["React", "Next.js", "HTML", "CSS", "TypeScript", "JavaScript", "Tailwind CSS", "Responsive Design"],
+    skills: ["React", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Responsive Design"],
   },
   {
     icon: "📱",
@@ -392,7 +400,7 @@ const skillGroups = [
     color: "#06b6d4",
     bg: "rgba(6,182,212,0.08)",
     border: "rgba(6,182,212,0.2)",
-    skills: ["Flutter", "Dart", "React Native", "Riverpod", "Android Development", "Mobile UI/UX"],
+    skills: ["Flutter", "React Native", "Riverpod", "Android Development", "Mobile UI/UX"],
   },
   {
     icon: "⚙️",
@@ -400,7 +408,7 @@ const skillGroups = [
     color: "#34d399",
     bg: "rgba(16,185,129,0.08)",
     border: "rgba(16,185,129,0.2)",
-    skills: ["Node.js", "Express", "NestJS", "FastAPI", "Strapi", "Firebase", "Google Apps Script", "PHP"],
+    skills: ["Node.js", "Express", "NestJS", "FastAPI", "Strapi", "Firebase", "Google Apps Script"],
   },
   {
     icon: "🗄️",
@@ -424,7 +432,7 @@ const skillGroups = [
     color: "#f472b6",
     bg: "rgba(244,114,182,0.08)",
     border: "rgba(244,114,182,0.2)",
-    skills: ["Python", "R", "PyTorch", "TensorFlow", "OpenCV", "Pandas", "NumPy", "Scikit-Learn", "ML Inference"],
+    skills: ["PyTorch", "TensorFlow", "OpenCV", "Pandas", "NumPy", "Scikit-Learn", "NLP", "ML Inference"],
   },
   {
     icon: "✅",
@@ -432,7 +440,7 @@ const skillGroups = [
     color: "#10b981",
     bg: "rgba(16,185,129,0.08)",
     border: "rgba(16,185,129,0.2)",
-    skills: ["Jest", "Pytest", "Swagger", "ReDoc", "Playwright", "Locust", "Postman", "Supertest"],
+    skills: ["Jest", "Pytest", "Playwright", "SonarQube", "Locust", "Postman", "Supertest", "Swagger", "ReDoc"],
   },
   {
     icon: "⚡",
@@ -440,15 +448,7 @@ const skillGroups = [
     color: "#ec4899",
     bg: "rgba(236,72,153,0.08)",
     border: "rgba(236,72,153,0.2)",
-    skills: ["C / C++", "CUDA", "OpenMP", "MPI", "Apache Spark", "Hadoop", "Ansible", "Slurm", "Cluster Computing"],
-  },
-  {
-    icon: "🔒",
-    title: "Systems & Security",
-    color: "#fbbf24",
-    bg: "rgba(251,191,36,0.08)",
-    border: "rgba(251,191,36,0.2)",
-    skills: ["Linux (Ubuntu)", "Nginx Reverse Proxy", "JWT Authentication", "OAuth2", "RBAC", "Microservices", "Docker Security"],
+    skills: ["CUDA", "OpenMP", "MPI", "Slurm", "Apache Spark", "Hadoop", "Ansible", "Cluster Computing"],
   },
 ];
 
@@ -530,7 +530,7 @@ export default function Home() {
                   <span className="type-text">Full-Stack Developer</span>
                 </p>
                 <p className="hero-description">
-                  I’m a Full-Stack Developer experienced in building web applications, backend services, and production deployments. My background includes API design, scalable backend development, testing, and maintaining reliable systems in real-world environments. I’m particularly interested in building maintainable systems that balance technical quality with practical business impact.
+                  I am a Full-Stack Developer with hands-on experience building real-world web applications across frontend, backend, database, testing, deployment, and system operations. I adapt quickly to new technologies, tools, and project requirements, with a strong focus on writing maintainable code, designing reliable APIs, and delivering practical software solutions that can be used and maintained in real environments.
                 </p>
                 <div className="hero-ctas">
                   <a href="#contact" className="btn-primary">
