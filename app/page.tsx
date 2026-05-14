@@ -384,7 +384,7 @@ const skillGroups = [
     color: "#fbbf24",
     bg: "rgba(251,191,36,0.08)",
     border: "rgba(251,191,36,0.2)",
-    skills: ["TypeScript", "JavaScript", "Dart", "Python", "R", "PHP", "C/C++"],
+    skills: ["TypeScript", "JavaScript", "Dart", "Python", "R", "PHP", "C", "C++", "C#"],
   },
   {
     icon: "⚛️",
@@ -408,7 +408,7 @@ const skillGroups = [
     color: "#34d399",
     bg: "rgba(16,185,129,0.08)",
     border: "rgba(16,185,129,0.2)",
-    skills: ["Node.js", "Express", "NestJS", "FastAPI", "Strapi", "Firebase", "Google Apps Script"],
+    skills: ["Node.js", "Express", "NestJS", "ASP.NET", "FastAPI", "Strapi", "Firebase", "Google Apps Script"],
   },
   {
     icon: "🗄️",
