@@ -37,12 +37,7 @@ const STATUS_CONFIG: Record<string, { color: string; bg: string; border: string 
 /* ─── Component ──────────────────────────────────────────────────── */
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // Reset image index when a new project is opened
-  useEffect(() => {
-    setCurrentImageIndex(0);
-  }, [project]);
+  const [imageState, setImageState] = useState({ projectTitle: "", index: 0 });
 
   /* Lock body scroll + ESC to close */
   useEffect(() => {
@@ -68,6 +63,13 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   if (!project) return null;
 
   const status = STATUS_CONFIG[project.status] ?? STATUS_CONFIG["Personal"];
+  const currentImageIndex = imageState.projectTitle === project.title ? imageState.index : 0;
+  const setProjectImageIndex = (updater: (current: number) => number) => {
+    setImageState((current) => {
+      const currentIndex = current.projectTitle === project.title ? current.index : 0;
+      return { projectTitle: project.title, index: updater(currentIndex) };
+    });
+  };
 
   return (
     /* ── Backdrop ───────────────────────────────────────────────── */
@@ -144,7 +146,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      setCurrentImageIndex((prev) => (prev === 0 ? project.screenshots.length - 1 : prev - 1));
+                      setProjectImageIndex((prev) => (prev === 0 ? project.screenshots.length - 1 : prev - 1));
                     }}
                     style={{
                       position: "absolute", left: "16px", top: "50%", transform: "translateY(-50%)",
@@ -165,7 +167,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      setCurrentImageIndex((prev) => (prev === project.screenshots.length - 1 ? 0 : prev + 1));
+                      setProjectImageIndex((prev) => (prev === project.screenshots.length - 1 ? 0 : prev + 1));
                     }}
                     style={{
                       position: "absolute", right: "16px", top: "50%", transform: "translateY(-50%)",
