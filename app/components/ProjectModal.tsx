@@ -38,6 +38,12 @@ const STATUS_CONFIG: Record<string, { color: string; bg: string; border: string 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [imageState, setImageState] = useState({ projectTitle: "", index: 0 });
+  const [isImageFullscreen, setIsImageFullscreen] = useState(false);
+
+  const handleClose = () => {
+    setIsImageFullscreen(false);
+    onClose();
+  };
 
   /* Lock body scroll + ESC to close */
   useEffect(() => {
@@ -47,7 +53,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     document.body.style.overflow = "hidden";
 
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key !== "Escape") return;
+
+      if (isImageFullscreen) {
+        setIsImageFullscreen(false);
+        return;
+      }
+
+      onClose();
     };
     window.addEventListener("keydown", handleKey);
 
@@ -58,7 +71,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       document.body.style.overflow = prevOverflow;
       window.removeEventListener("keydown", handleKey);
     };
-  }, [project, onClose]);
+  }, [project, onClose, isImageFullscreen]);
 
   if (!project) return null;
 
@@ -70,12 +83,13 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       return { projectTitle: project.title, index: updater(currentIndex) };
     });
   };
+  const currentScreenshot = project.screenshots[currentImageIndex];
 
   return (
     /* ── Backdrop ───────────────────────────────────────────────── */
     <div
       className="modal-backdrop"
-      onClick={onClose}
+      onClick={handleClose}
       role="presentation"
       aria-hidden="false"
     >
@@ -121,7 +135,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           <button
             className="modal-close-btn"
-            onClick={onClose}
+            onClick={handleClose}
             aria-label="Close project details"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -139,6 +153,20 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 style={{ width: "100%", height: "auto", maxHeight: "65vh", objectFit: "contain", borderRadius: "8px" }}
                 loading="lazy"
               />
+              <button
+                className="modal-fullscreen-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsImageFullscreen(true);
+                }}
+                aria-label="View screenshot full screen"
+                title="View full screen"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M3 3l6 6M21 3l-6 6M3 21l6-6M21 21l-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
               
               {project.screenshots.length > 1 && (
                 <>
@@ -284,6 +312,71 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
         )}
       </div>
+      {isImageFullscreen && currentScreenshot && (
+        <div
+          className="fullscreen-image-backdrop"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${project.title} screenshot ${currentImageIndex + 1} full screen`}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsImageFullscreen(false);
+          }}
+        >
+          <button
+            className="fullscreen-image-close"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsImageFullscreen(false);
+            }}
+            aria-label="Close full screen image"
+          >
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
+
+          {project.screenshots.length > 1 && (
+            <>
+              <button
+                className="fullscreen-image-nav fullscreen-image-nav--prev"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setProjectImageIndex((prev) => (prev === 0 ? project.screenshots.length - 1 : prev - 1));
+                }}
+                aria-label="Previous full screen screenshot"
+              >
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <polyline points="15 18 9 12 15 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <button
+                className="fullscreen-image-nav fullscreen-image-nav--next"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setProjectImageIndex((prev) => (prev === project.screenshots.length - 1 ? 0 : prev + 1));
+                }}
+                aria-label="Next full screen screenshot"
+              >
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <polyline points="9 18 15 12 9 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </>
+          )}
+
+          <img
+            className="fullscreen-image"
+            src={currentScreenshot}
+            alt={`${project.title} screenshot ${currentImageIndex + 1} full screen`}
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          <div className="fullscreen-image-counter">
+            {currentImageIndex + 1} / {project.screenshots.length}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
