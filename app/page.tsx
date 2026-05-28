@@ -289,7 +289,7 @@ const projects: ProjectDetail[] = [
     title: "AZ Phuket Staff Portal",
     period: "Mar 2025 – Jun 2025",
     description:
-      "An internal HR and recruitment portal for AZPhuket Hotels & Resorts, digitizing paper-based workflows with a drag-and-drop candidate pipeline and public career board.",
+      "An internal HR portal for AZPhuket Hotels & Resorts, digitizing paper-based workflows with a drag-and-drop candidate pipeline and public career board.",
     longDescription:
       "An enterprise-grade internal operations and HR portal designed for AZPhuket Hotels & Resorts (covering properties like The Old Phuket, Karon Boutique, The GIG hotel, Gu Hotel, and Add Plus Resort & Spa). Built during an IT internship to replace highly manual, paper-based workflows. The system features a public career board where candidates can search and apply for jobs across properties, and an internal administrative dashboard. In its first phase, it provides a full Applicant Tracking System (ATS) with a Kanban-style pipeline (New, Screening, Interview, Offered), resume upload, candidate rating, and dynamic job posting management. Future phases include leave requests, day-off swaps, and overtime approval modules.",
     role: "IT Developer Intern",
