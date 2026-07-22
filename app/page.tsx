@@ -12,7 +12,7 @@ const experience = [
     location: "Remote / Hybrid",
     bullets: [
       "Owned the end-to-end development of an aquaculture management platform for a Betagro-Kasetsart University research initiative, transforming fragmented manual workflows into a unified system, through responsive interfaces and dashboard workflows using Next.js.",
-      "Engineered a scalable backend architecture with Node.js, TypeScript, PostgreSQL, and Prisma, improving type integrity and API reliability across the system while reducing runtime failures by approximately 65%.",
+      "Engineered a scalable backend architecture with Express.js, TypeScript, PostgreSQL, and Prisma, improving type integrity, data consistency, and overall system reliability.",
       "Established a robust automated testing strategy with Jest, driving coverage beyond 95% and improving software quality through earlier identification of critical defects prior to production rollout.",
       "Oversaw production deployment and runtime operations on Ubuntu infrastructure with Nginx reverse proxy and PM2 process management, maintaining 99.9% uptime and dependable service continuity.",
     ],
@@ -37,9 +37,9 @@ const experience = [
     company: "The Old Phuket Karon Beach Resort",
     location: "Phuket, Thailand",
     bullets: [
-      "Developed a serverless event operations platform using Google Apps Script for an annual hospitality IT seminar with approximately 300 attendees from leading hotels across Southern Thailand, replacing manual registration with a QR-based self-service workflow that improved attendee throughput and reduced front-desk dependency.",
+      "Developed a serverless event operations platform using Google Apps Script for a 300+ attendee regional IT seminar, replacing manual check-in with a QR-based self-service system. Improving registration throughput and securing 96% positive user satisfaction in post-event feedback.",
       "Implemented an Applicant Tracking System using Next.js and NestJS to centralize applicant data and job posting workflows, enabling HR to manage recruitment processes more efficiently and systematically.",
-      "Provided rapid-response technical support for critical local networking and device infrastructure, troubleshooting software and connectivity issues across internal and guest-facing services in a hospitality environment.",
+      "Maintained high-availability local network and IT infrastructure through routine system monitoring, rapidly resolving software and connectivity issues across internal and guest-facing services.",
     ],
     stack: ["React", "Google Apps Script", "Google Sheets", "JavaScript", "HTML/CSS"],
     color: "cyan",
