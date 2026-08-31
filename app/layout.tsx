@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Fira_Code } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
@@ -14,6 +14,12 @@ const firaCode = Fira_Code({
   subsets: ["latin"],
   weight: ["400", "500"],
 });
+
+export const viewport: Viewport = {
+  themeColor: "#060b14",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ratchanon.space"),
@@ -65,6 +71,35 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Ratchanon Kulpatrakorn",
+  url: "https://www.ratchanon.space",
+  jobTitle: "Full-Stack Developer",
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Prince of Songkla University",
+  },
+  sameAs: [
+    "https://github.com/koard",
+    "https://www.linkedin.com/in/kulpatrakorn/",
+  ],
+  knowsAbout: [
+    "TypeScript",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Python",
+    "Flutter",
+    "Docker",
+    "Full-Stack Development",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -76,6 +111,12 @@ export default function RootLayout({
       className={`${inter.variable} ${firaCode.variable} h-full`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full" suppressHydrationWarning>
         {children}
         <Analytics />
