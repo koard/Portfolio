@@ -844,75 +844,84 @@ export default function Home() {
                 I&apos;m currently seeking full-stack and backend engineering roles where I can architect robust systems and deliver meaningful impact. Whether you have an opportunity or just want to connect, my inbox is always open.
               </p>
 
-              {/* Creative Contact Email Card with One-Click Copy */}
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem", marginBottom: "1.75rem" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap", justifyContent: "center" }}>
+              {/* Unified Contact Email Card with Embedded Copy Button */}
+              <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.5rem" }}>
+                <div
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: "0.75rem",
+                    padding: "0.45rem 0.6rem 0.45rem 0.45rem",
+                    background: "rgba(59, 130, 246, 0.05)",
+                    border: "1px solid rgba(59, 130, 246, 0.18)",
+                    borderRadius: "999px",
+                    maxWidth: "100%",
+                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.35)";
+                    e.currentTarget.style.boxShadow = "0 8px 32px rgba(59, 130, 246, 0.15)";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.18)";
+                    e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.2)";
+                  }}
+                >
                   <a
                     href="mailto:r.kulpatrakorn@gmail.com"
                     style={{
-                      display: "inline-flex",
+                      display: "flex",
                       alignItems: "center",
-                      gap: "1.2rem",
-                      padding: "0.5rem 1.5rem 0.5rem 0.5rem",
-                      background: "rgba(59, 130, 246, 0.05)",
-                      border: "1px solid rgba(59, 130, 246, 0.15)",
-                      borderRadius: "999px",
+                      gap: "0.75rem",
                       textDecoration: "none",
-                      boxShadow: "0 0 20px rgba(59, 130, 246, 0)",
-                      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.background = "rgba(59, 130, 246, 0.1)";
-                      e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.3)";
-                      e.currentTarget.style.boxShadow = "0 8px 32px rgba(59, 130, 246, 0.15)";
-                      e.currentTarget.style.transform = "translateY(-2px)";
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.background = "rgba(59, 130, 246, 0.05)";
-                      e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.15)";
-                      e.currentTarget.style.boxShadow = "0 0 20px rgba(59, 130, 246, 0)";
-                      e.currentTarget.style.transform = "translateY(0)";
+                      minWidth: 0,
                     }}
                   >
                     <div style={{
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      width: "48px",
-                      height: "48px",
+                      width: "42px",
+                      height: "42px",
                       borderRadius: "50%",
                       background: "linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))",
                       color: "white",
-                      fontSize: "1.4rem",
+                      fontSize: "1.2rem",
+                      flexShrink: 0,
                       boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)"
                     }}>
                       <span style={{ WebkitTextFillColor: "initial" }}>✉</span>
                     </div>
-                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-                      <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.05em", fontWeight: 700, marginBottom: "0.1rem" }}>
-                        Email Me At
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", minWidth: 0 }}>
+                      <span style={{ fontSize: "0.68rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700, marginBottom: "0.05rem" }}>
+                        Email
                       </span>
-                      <span style={{ fontSize: "1.15rem", fontWeight: 600, color: "var(--text-primary)" }}>
+                      <span style={{ fontSize: "clamp(0.85rem, 3.4vw, 1.05rem)", fontWeight: 600, color: "var(--text-primary)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                         r.kulpatrakorn@gmail.com
                       </span>
                     </div>
                   </a>
 
-                  {/* Copy Email Button */}
+                  {/* Embedded Copy Button */}
                   <button
                     onClick={handleCopyEmail}
-                    className="btn-secondary"
                     style={{
-                      padding: "0.75rem 1.25rem",
+                      padding: "0.45rem 0.85rem",
+                      borderRadius: "999px",
+                      border: "1px solid",
+                      borderColor: copiedEmail ? "rgba(16, 185, 129, 0.5)" : "rgba(255, 255, 255, 0.12)",
+                      background: copiedEmail ? "rgba(16, 185, 129, 0.15)" : "rgba(255, 255, 255, 0.06)",
+                      color: copiedEmail ? "#34d399" : "var(--text-secondary)",
+                      fontSize: "0.78rem",
+                      fontWeight: 600,
                       cursor: "pointer",
                       display: "inline-flex",
                       alignItems: "center",
-                      gap: "0.45rem",
-                      fontSize: "0.88rem",
-                      borderColor: copiedEmail ? "rgba(16, 185, 129, 0.5)" : "var(--border)",
-                      color: copiedEmail ? "#34d399" : "var(--text-primary)",
-                      background: copiedEmail ? "rgba(16, 185, 129, 0.12)" : "transparent",
-                      transition: "all 0.25s ease",
+                      gap: "0.35rem",
+                      flexShrink: 0,
+                      transition: "all 0.2s ease",
                     }}
                     aria-label="Copy email address"
                     title="Copy email to clipboard"
@@ -920,11 +929,11 @@ export default function Home() {
                     {copiedEmail ? (
                       <>
                         <span style={{ color: "#10b981", fontWeight: 700 }}>✓</span>
-                        <span style={{ color: "#10b981", fontWeight: 600 }}>Copied!</span>
+                        <span style={{ color: "#10b981" }}>Copied!</span>
                       </>
                     ) : (
                       <>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                           <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                           <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                         </svg>
@@ -935,42 +944,42 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Clean social/contact buttons row */}
-              <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1rem" }}>
+              {/* Symmetrical 2x2 on Mobile / 4-in-a-row on Desktop */}
+              <div className="contact-actions-grid">
                 <a
                   href="/resume.pdf"
                   target="_blank"
                   rel="noreferrer"
                   className="btn-secondary"
-                  style={{ padding: "0.75rem 1.5rem" }}
-                  title="View Resume / CV (PDF)"
+                  style={{ padding: "0.75rem 1.4rem" }}
+                  title="View Resume (PDF)"
                 >
-                  <span style={{ marginRight: "0.5rem", WebkitTextFillColor: "initial" }}>📄</span> Resume (PDF)
+                  <span style={{ marginRight: "0.45rem", WebkitTextFillColor: "initial" }}>📄</span> Resume
                 </a>
                 <a
                   href="tel:0950869626"
                   className="btn-secondary"
-                  style={{ padding: "0.75rem 1.5rem" }}
+                  style={{ padding: "0.75rem 1.4rem" }}
                 >
-                  <span style={{ marginRight: "0.5rem", WebkitTextFillColor: "initial" }}>📞</span> 095-086-9626
+                  <span style={{ marginRight: "0.45rem", WebkitTextFillColor: "initial" }}>📞</span> 095-086-9626
                 </a>
                 <a
                   href="https://github.com/koard"
                   target="_blank"
                   rel="noreferrer"
                   className="btn-secondary"
-                  style={{ padding: "0.75rem 1.5rem" }}
+                  style={{ padding: "0.75rem 1.4rem" }}
                 >
-                  <span style={{ marginRight: "0.5rem", WebkitTextFillColor: "initial" }}>💻</span> GitHub
+                  <span style={{ marginRight: "0.45rem", WebkitTextFillColor: "initial" }}>💻</span> GitHub
                 </a>
                 <a
                   href="https://www.linkedin.com/in/kulpatrakorn/"
                   target="_blank"
                   rel="noreferrer"
                   className="btn-secondary"
-                  style={{ padding: "0.75rem 1.5rem" }}
+                  style={{ padding: "0.75rem 1.4rem" }}
                 >
-                  <span style={{ marginRight: "0.5rem", WebkitTextFillColor: "initial" }}>💼</span> LinkedIn
+                  <span style={{ marginRight: "0.45rem", WebkitTextFillColor: "initial" }}>💼</span> LinkedIn
                 </a>
               </div>
             </div>
