@@ -459,9 +459,17 @@ const skillGroups = [
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null);
+  const [copiedEmail, setCopiedEmail] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   const onCloseModal = useCallback(() => setSelectedProject(null), []);
+
+  const handleCopyEmail = useCallback((e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
+    navigator.clipboard.writeText("r.kulpatrakorn@gmail.com");
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2500);
+  }, []);
 
   /* Scroll progress bar */
   useEffect(() => {
@@ -538,6 +546,16 @@ export default function Home() {
                 <div className="hero-ctas">
                   <a href="#contact" className="btn-primary">
                     Get in Touch
+                  </a>
+
+                  <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-secondary"
+                    title="View Resume / CV (PDF)"
+                  >
+                    <span>📄 Resume / CV</span>
                   </a>
 
                   <a
@@ -826,62 +844,109 @@ export default function Home() {
                 I&apos;m currently seeking full-stack and backend engineering roles where I can architect robust systems and deliver meaningful impact. Whether you have an opportunity or just want to connect, my inbox is always open.
               </p>
 
-              {/* Creative Contact Email Card */}
-              <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.25rem" }}>
-                <a
-                  href="mailto:r.kulpatrakorn@gmail.com"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "1.2rem",
-                    padding: "0.5rem 1.5rem 0.5rem 0.5rem",
-                    background: "rgba(59, 130, 246, 0.05)",
-                    border: "1px solid rgba(59, 130, 246, 0.15)",
-                    borderRadius: "999px",
-                    textDecoration: "none",
-                    boxShadow: "0 0 20px rgba(59, 130, 246, 0)",
-                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.background = "rgba(59, 130, 246, 0.1)";
-                    e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.3)";
-                    e.currentTarget.style.boxShadow = "0 8px 32px rgba(59, 130, 246, 0.15)";
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.background = "rgba(59, 130, 246, 0.05)";
-                    e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.15)";
-                    e.currentTarget.style.boxShadow = "0 0 20px rgba(59, 130, 246, 0)";
-                    e.currentTarget.style.transform = "translateY(0)";
-                  }}
-                >
-                  <div style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    width: "48px",
-                    height: "48px",
-                    borderRadius: "50%",
-                    background: "linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))",
-                    color: "white",
-                    fontSize: "1.4rem",
-                    boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)"
-                  }}>
-                    <span style={{ WebkitTextFillColor: "initial" }}>✉</span>
-                  </div>
-                  <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-                    <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.05em", fontWeight: 700, marginBottom: "0.1rem" }}>
-                      Email Me At
-                    </span>
-                    <span style={{ fontSize: "1.15rem", fontWeight: 600, color: "var(--text-primary)" }}>
-                      r.kulpatrakorn@gmail.com
-                    </span>
-                  </div>
-                </a>
+              {/* Creative Contact Email Card with One-Click Copy */}
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem", marginBottom: "1.75rem" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap", justifyContent: "center" }}>
+                  <a
+                    href="mailto:r.kulpatrakorn@gmail.com"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "1.2rem",
+                      padding: "0.5rem 1.5rem 0.5rem 0.5rem",
+                      background: "rgba(59, 130, 246, 0.05)",
+                      border: "1px solid rgba(59, 130, 246, 0.15)",
+                      borderRadius: "999px",
+                      textDecoration: "none",
+                      boxShadow: "0 0 20px rgba(59, 130, 246, 0)",
+                      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.background = "rgba(59, 130, 246, 0.1)";
+                      e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.3)";
+                      e.currentTarget.style.boxShadow = "0 8px 32px rgba(59, 130, 246, 0.15)";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.background = "rgba(59, 130, 246, 0.05)";
+                      e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.15)";
+                      e.currentTarget.style.boxShadow = "0 0 20px rgba(59, 130, 246, 0)";
+                      e.currentTarget.style.transform = "translateY(0)";
+                    }}
+                  >
+                    <div style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "48px",
+                      height: "48px",
+                      borderRadius: "50%",
+                      background: "linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))",
+                      color: "white",
+                      fontSize: "1.4rem",
+                      boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)"
+                    }}>
+                      <span style={{ WebkitTextFillColor: "initial" }}>✉</span>
+                    </div>
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                      <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.05em", fontWeight: 700, marginBottom: "0.1rem" }}>
+                        Email Me At
+                      </span>
+                      <span style={{ fontSize: "1.15rem", fontWeight: 600, color: "var(--text-primary)" }}>
+                        r.kulpatrakorn@gmail.com
+                      </span>
+                    </div>
+                  </a>
+
+                  {/* Copy Email Button */}
+                  <button
+                    onClick={handleCopyEmail}
+                    className="btn-secondary"
+                    style={{
+                      padding: "0.75rem 1.25rem",
+                      cursor: "pointer",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "0.45rem",
+                      fontSize: "0.88rem",
+                      borderColor: copiedEmail ? "rgba(16, 185, 129, 0.5)" : "var(--border)",
+                      color: copiedEmail ? "#34d399" : "var(--text-primary)",
+                      background: copiedEmail ? "rgba(16, 185, 129, 0.12)" : "transparent",
+                      transition: "all 0.25s ease",
+                    }}
+                    aria-label="Copy email address"
+                    title="Copy email to clipboard"
+                  >
+                    {copiedEmail ? (
+                      <>
+                        <span style={{ color: "#10b981", fontWeight: 700 }}>✓</span>
+                        <span style={{ color: "#10b981", fontWeight: 600 }}>Copied!</span>
+                      </>
+                    ) : (
+                      <>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span>Copy</span>
+                      </>
+                    )}
+                  </button>
+                </div>
               </div>
 
               {/* Clean social/contact buttons row */}
               <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1rem" }}>
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-secondary"
+                  style={{ padding: "0.75rem 1.5rem" }}
+                  title="View Resume / CV (PDF)"
+                >
+                  <span style={{ marginRight: "0.5rem", WebkitTextFillColor: "initial" }}>📄</span> Resume (PDF)
+                </a>
                 <a
                   href="tel:0950869626"
                   className="btn-secondary"
