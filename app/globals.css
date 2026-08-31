@@ -1102,8 +1102,15 @@ section {
     margin-bottom: 1.75rem;
   }
   .hero-ctas {
-    gap: 0.65rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-bottom: 2rem;
+  }
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-secondary {
+    padding: 0.65rem 1.15rem;
+    font-size: 0.84rem;
   }
   .projects-grid {
     grid-template-columns: 1fr;
@@ -1128,6 +1135,16 @@ section {
   }
   section {
     padding: 3.5rem 0;
+  }
+  .hero-ctas {
+    gap: 0.45rem;
+    flex-wrap: nowrap;
+  }
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-secondary {
+    padding: 0.62rem 0.8rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
   }
   .stat-item {
     padding: 0.85rem 0.4rem;

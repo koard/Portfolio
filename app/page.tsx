@@ -545,7 +545,7 @@ export default function Home() {
                 </p>
                 <div className="hero-ctas">
                   <a href="#contact" className="btn-primary">
-                    Get in Touch
+                    Contact
                   </a>
 
                   <a
