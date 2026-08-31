@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export interface ProjectDetail {
@@ -40,13 +40,54 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [imageState, setImageState] = useState({ projectTitle: "", index: 0 });
   const [isImageFullscreen, setIsImageFullscreen] = useState(false);
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
 
   const handleClose = () => {
     setIsImageFullscreen(false);
     onClose();
   };
 
-  /* Lock body scroll + ESC to close */
+  const setProjectImageIndex = useCallback((updater: (current: number) => number) => {
+    if (!project) return;
+    setImageState((current) => {
+      const currentIndex = current.projectTitle === project.title ? current.index : 0;
+      return { projectTitle: project.title, index: updater(currentIndex) };
+    });
+  }, [project]);
+
+  const handlePrevImage = useCallback(() => {
+    if (!project || project.screenshots.length <= 1) return;
+    setProjectImageIndex((prev) => (prev === 0 ? project.screenshots.length - 1 : prev - 1));
+  }, [project, setProjectImageIndex]);
+
+  const handleNextImage = useCallback(() => {
+    if (!project || project.screenshots.length <= 1) return;
+    setProjectImageIndex((prev) => (prev === project.screenshots.length - 1 ? 0 : prev + 1));
+  }, [project, setProjectImageIndex]);
+
+  /* Touch Swipe Handlers */
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null || touchStartY.current === null) return;
+    const diffX = touchStartX.current - e.changedTouches[0].clientX;
+    const diffY = touchStartY.current - e.changedTouches[0].clientY;
+    if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY) * 1.2) {
+      if (diffX > 0) {
+        handleNextImage();
+      } else {
+        handlePrevImage();
+      }
+    }
+    touchStartX.current = null;
+    touchStartY.current = null;
+  };
+
+  /* Lock body scroll + ESC + Arrow keys for navigation */
   useEffect(() => {
     if (!project) return;
 
@@ -54,14 +95,17 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     document.body.style.overflow = "hidden";
 
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key !== "Escape") return;
-
-      if (isImageFullscreen) {
-        setIsImageFullscreen(false);
-        return;
+      if (e.key === "Escape") {
+        if (isImageFullscreen) {
+          setIsImageFullscreen(false);
+        } else {
+          onClose();
+        }
+      } else if (e.key === "ArrowLeft") {
+        handlePrevImage();
+      } else if (e.key === "ArrowRight") {
+        handleNextImage();
       }
-
-      onClose();
     };
     window.addEventListener("keydown", handleKey);
 
@@ -72,18 +116,12 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       document.body.style.overflow = prevOverflow;
       window.removeEventListener("keydown", handleKey);
     };
-  }, [project, onClose, isImageFullscreen]);
+  }, [project, onClose, isImageFullscreen, handlePrevImage, handleNextImage]);
 
   if (!project) return null;
 
   const status = STATUS_CONFIG[project.status] ?? STATUS_CONFIG["Personal"];
   const currentImageIndex = imageState.projectTitle === project.title ? imageState.index : 0;
-  const setProjectImageIndex = (updater: (current: number) => number) => {
-    setImageState((current) => {
-      const currentIndex = current.projectTitle === project.title ? current.index : 0;
-      return { projectTitle: project.title, index: updater(currentIndex) };
-    });
-  };
   const currentScreenshot = project.screenshots[currentImageIndex];
 
   return (
@@ -147,14 +185,19 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         <div className="modal-screenshots-area">
           {project.screenshots.length > 0 ? (
-            <div className="modal-carousel-container" style={{ position: "relative", width: "100%", borderRadius: "var(--radius-md)", overflow: "hidden", background: "var(--bg-card)", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid var(--border)", padding: "16px", minHeight: "300px" }}>
+            <div
+              className="modal-carousel-container"
+              style={{ position: "relative", width: "100%", borderRadius: "var(--radius-md)", overflow: "hidden", background: "var(--bg-card)", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid var(--border)", padding: "16px", minHeight: "300px", touchAction: "pan-y" }}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
               <Image
                 src={project.screenshots[currentImageIndex]}
                 alt={`${project.title} — screenshot ${currentImageIndex + 1}`}
                 width={1200}
                 height={750}
                 sizes="(max-width: 768px) 100vw, 720px"
-                style={{ width: "100%", height: "auto", maxHeight: "65vh", objectFit: "contain", borderRadius: "8px" }}
+                style={{ width: "100%", height: "auto", maxHeight: "65vh", objectFit: "contain", borderRadius: "8px", userSelect: "none" }}
                 quality={90}
                 priority
               />
@@ -179,7 +222,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      setProjectImageIndex((prev) => (prev === 0 ? project.screenshots.length - 1 : prev - 1));
+                      handlePrevImage();
                     }}
                     style={{
                       position: "absolute", left: "16px", top: "50%", transform: "translateY(-50%)",
@@ -200,7 +243,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      setProjectImageIndex((prev) => (prev === project.screenshots.length - 1 ? 0 : prev + 1));
+                      handleNextImage();
                     }}
                     style={{
                       position: "absolute", right: "16px", top: "50%", transform: "translateY(-50%)",
@@ -323,6 +366,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           role="dialog"
           aria-modal="true"
           aria-label={`${project.title} screenshot ${currentImageIndex + 1} full screen`}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
           onClick={(e) => {
             e.stopPropagation();
             setIsImageFullscreen(false);
@@ -347,7 +392,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 className="fullscreen-image-nav fullscreen-image-nav--prev"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setProjectImageIndex((prev) => (prev === 0 ? project.screenshots.length - 1 : prev - 1));
+                  handlePrevImage();
                 }}
                 aria-label="Previous full screen screenshot"
               >
@@ -359,7 +404,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 className="fullscreen-image-nav fullscreen-image-nav--next"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setProjectImageIndex((prev) => (prev === project.screenshots.length - 1 ? 0 : prev + 1));
+                  handleNextImage();
                 }}
                 aria-label="Next full screen screenshot"
               >
