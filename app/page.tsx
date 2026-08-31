@@ -553,9 +553,9 @@ export default function Home() {
                     target="_blank"
                     rel="noreferrer"
                     className="btn-secondary"
-                    title="View Resume / CV (PDF)"
+                    title="View Resume (PDF)"
                   >
-                    <span>📄 Resume / CV</span>
+                    <span>📄 Resume</span>
                   </a>
 
                   <a
