@@ -141,9 +141,6 @@ const projects: ProjectDetail[] = [
     screenshots: [
       "/campus/1.png",
       "/campus/2.png",
-      "/campus/3.png",
-      "/campus/4.png",
-      "/campus/5.png",
       "/campus/6.png",
       "/campus/7.png",
       "/campus/8.png",
