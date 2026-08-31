@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export interface ProjectDetail {
   icon: string;
@@ -147,11 +148,15 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         <div className="modal-screenshots-area">
           {project.screenshots.length > 0 ? (
             <div className="modal-carousel-container" style={{ position: "relative", width: "100%", borderRadius: "var(--radius-md)", overflow: "hidden", background: "var(--bg-card)", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid var(--border)", padding: "16px", minHeight: "300px" }}>
-              <img
+              <Image
                 src={project.screenshots[currentImageIndex]}
                 alt={`${project.title} — screenshot ${currentImageIndex + 1}`}
+                width={1200}
+                height={750}
+                sizes="(max-width: 768px) 100vw, 720px"
                 style={{ width: "100%", height: "auto", maxHeight: "65vh", objectFit: "contain", borderRadius: "8px" }}
-                loading="lazy"
+                quality={90}
+                priority
               />
               <button
                 className="modal-fullscreen-btn"
@@ -365,10 +370,16 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </>
           )}
 
-          <img
+          <Image
             className="fullscreen-image"
             src={currentScreenshot}
             alt={`${project.title} screenshot ${currentImageIndex + 1} full screen`}
+            width={1920}
+            height={1080}
+            sizes="100vw"
+            style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto", objectFit: "contain" }}
+            quality={95}
+            priority
             onClick={(e) => e.stopPropagation()}
           />
 
