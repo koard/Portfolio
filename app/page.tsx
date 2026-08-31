@@ -555,7 +555,7 @@ export default function Home() {
                     className="btn-secondary"
                     title="View Resume (PDF)"
                   >
-                    <span>📄 Resume</span>
+                    <span>Resume</span>
                   </a>
 
                   <a
@@ -564,7 +564,7 @@ export default function Home() {
                     rel="noreferrer"
                     className="btn-secondary"
                   >
-                    GitHub ↗
+                    GitHub
                   </a>
                 </div>
                 {/* Stats */}

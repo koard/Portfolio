@@ -368,9 +368,15 @@ section {
 /* ─── Hero Right / Avatar Area ───────────────────────────────── */
 .hero-visual {
   position: relative;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-visual {
+    display: flex;
+  }
 }
 
 @keyframes spinSlow {
@@ -1094,15 +1100,8 @@ section {
   .cta-box {
     padding: 2.5rem 1.5rem;
   }
-  .floating-chip {
-    display: none;
-  }
-  .avatar-ring {
-    width: 220px;
-    height: 220px;
-  }
   .hero-visual {
-    margin-bottom: 2rem;
+    display: none !important;
   }
 }
 
