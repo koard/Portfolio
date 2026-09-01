@@ -506,7 +506,7 @@ export default function Home() {
       projects.forEach((p) => {
         if (p.screenshots && p.screenshots.length > 0) {
           const img = new window.Image();
-          img.src = p.screenshots[0];
+          img.src = `/_next/image?url=${encodeURIComponent(p.screenshots[0])}&w=1200&q=85`;
         }
       });
     };
@@ -524,7 +524,7 @@ export default function Home() {
     if (!p.screenshots) return;
     p.screenshots.forEach((src) => {
       const img = new window.Image();
-      img.src = src;
+      img.src = `/_next/image?url=${encodeURIComponent(src)}&w=1200&q=85`;
     });
   }, []);
 
