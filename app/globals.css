@@ -1426,6 +1426,28 @@ section {
   justify-content: center;
 }
 
+/* ─── Modal Image Skeleton ───────────────────────────────────── */
+.modal-image-skeleton {
+  position: absolute;
+  inset: 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1;
+}
+
+.skeleton-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.08) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite linear;
+}
+
 .modal-screenshots-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));

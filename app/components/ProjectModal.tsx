@@ -40,8 +40,13 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [imageState, setImageState] = useState({ projectTitle: "", index: 0 });
   const [isImageFullscreen, setIsImageFullscreen] = useState(false);
+  const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
+
+  const handleImageLoad = (src: string) => {
+    setLoadedImages((prev) => ({ ...prev, [src]: true }));
+  };
 
   const handleClose = () => {
     setIsImageFullscreen(false);
@@ -191,6 +196,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
+              {!loadedImages[project.screenshots[currentImageIndex]] && (
+                <div className="modal-image-skeleton">
+                  <div className="skeleton-shimmer" />
+                </div>
+              )}
               {project.screenshots.map((src, idx) => (
                 <Image
                   key={src}
@@ -207,9 +217,12 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     borderRadius: "8px",
                     userSelect: "none",
                     display: idx === currentImageIndex ? "block" : "none",
+                    opacity: loadedImages[src] ? 1 : 0,
+                    transition: "opacity 0.2s ease",
                   }}
-                  quality={90}
+                  quality={85}
                   priority
+                  onLoad={() => handleImageLoad(src)}
                 />
               ))}
               <button

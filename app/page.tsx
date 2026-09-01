@@ -500,6 +500,34 @@ export default function Home() {
     return () => observerRef.current?.disconnect();
   }, []);
 
+  /* Idle prefetch of project cover images so modal opens instantly with 0ms delay */
+  useEffect(() => {
+    const prefetchCovers = () => {
+      projects.forEach((p) => {
+        if (p.screenshots && p.screenshots.length > 0) {
+          const img = new window.Image();
+          img.src = p.screenshots[0];
+        }
+      });
+    };
+
+    if (typeof window !== "undefined") {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(prefetchCovers);
+      } else {
+        setTimeout(prefetchCovers, 1500);
+      }
+    }
+  }, []);
+
+  const handlePrefetchProject = useCallback((p: ProjectDetail) => {
+    if (!p.screenshots) return;
+    p.screenshots.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, []);
+
   return (
     <>
       {/* Scroll Progress */}
@@ -656,6 +684,8 @@ export default function Home() {
                   tabIndex={0}
                   aria-label={`View details for ${p.title}`}
                   onClick={() => setSelectedProject(p)}
+                  onMouseEnter={() => handlePrefetchProject(p)}
+                  onTouchStart={() => handlePrefetchProject(p)}
                   onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setSelectedProject(p)}
                 >
                   {/* Badge + icon row */}
