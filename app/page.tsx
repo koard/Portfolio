@@ -544,27 +544,27 @@ export default function Home() {
                   I am a Full-Stack Developer with hands-on experience building real-world web applications across frontend, backend, database, testing, deployment, and system operations. I adapt quickly to new technologies, tools, and project requirements, with a strong focus on writing maintainable code, designing reliable APIs, and delivering practical software solutions that can be used and maintained in real environments.
                 </p>
                 <div className="hero-ctas">
-                  <a href="#contact" className="btn-primary">
-                    Contact
+                  <a href="#contact" className="btn-primary hero-btn">
+                    <span className="btn-icon">✉</span> Contact
                   </a>
 
                   <a
                     href="/resume.pdf"
                     target="_blank"
                     rel="noreferrer"
-                    className="btn-secondary"
+                    className="btn-secondary hero-btn"
                     title="View Resume (PDF)"
                   >
-                    <span>Resume</span>
+                    <span className="btn-icon">📄</span> Resume
                   </a>
 
                   <a
                     href="https://github.com/koard"
                     target="_blank"
                     rel="noreferrer"
-                    className="btn-secondary"
+                    className="btn-secondary hero-btn"
                   >
-                    GitHub
+                    <span className="btn-icon">💻</span> GitHub
                   </a>
                 </div>
                 {/* Stats */}

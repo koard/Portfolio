@@ -306,22 +306,39 @@ section {
 .btn-secondary {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.75rem;
-  background: transparent;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1.6rem;
+  background: rgba(255, 255, 255, 0.05);
   color: var(--text-primary);
   font-weight: 600;
   font-size: 0.92rem;
   border-radius: 999px;
   text-decoration: none;
-  border: 1px solid var(--border);
-  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-secondary:hover {
-  border-color: var(--border-hover);
-  background: rgba(255,255,255,0.05);
+  border-color: rgba(99, 179, 237, 0.45);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 16px rgba(59, 130, 246, 0.15);
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-btn .btn-icon {
+  margin-right: 0.25rem;
+  font-size: 0.95rem;
+  line-height: 1;
 }
 
 /* ─── Stats Row ──────────────────────────────────────────────── */
@@ -1102,15 +1119,22 @@ section {
     margin-bottom: 1.75rem;
   }
   .hero-ctas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    margin-bottom: 2rem !important;
   }
-  .hero-ctas .btn-primary,
-  .hero-ctas .btn-secondary {
-    padding: 0.65rem 1.15rem;
-    font-size: 0.84rem;
+  .hero-ctas .hero-btn {
+    width: 100% !important;
+    min-height: 46px !important;
+    padding: 0.65rem 0.3rem !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
   }
   .projects-grid {
     grid-template-columns: 1fr;
@@ -1163,14 +1187,11 @@ section {
     padding: 3.5rem 0;
   }
   .hero-ctas {
-    gap: 0.45rem;
-    flex-wrap: nowrap;
+    gap: 0.45rem !important;
   }
-  .hero-ctas .btn-primary,
-  .hero-ctas .btn-secondary {
-    padding: 0.62rem 0.8rem;
-    font-size: 0.8rem;
-    white-space: nowrap;
+  .hero-ctas .hero-btn {
+    padding: 0.65rem 0.25rem !important;
+    font-size: 0.78rem !important;
   }
   .stat-item {
     padding: 0.85rem 0.4rem;
