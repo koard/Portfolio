@@ -220,7 +220,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     opacity: loadedImages[src] ? 1 : 0,
                     transition: "opacity 0.2s ease",
                   }}
-                  quality={85}
+                  unoptimized={true}
                   priority
                   onLoad={() => handleImageLoad(src)}
                 />
@@ -456,7 +456,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 objectFit: "contain",
                 display: idx === currentImageIndex ? "block" : "none",
               }}
-              quality={95}
+              unoptimized={true}
               priority
               onClick={(e) => e.stopPropagation()}
             />
