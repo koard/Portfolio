@@ -1159,24 +1159,24 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem;
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
 }
 
 @media (max-width: 580px) {
   .contact-actions-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.65rem;
     width: 100%;
-    max-width: 360px;
+    max-width: 380px;
   }
   .contact-actions-grid .btn-secondary {
-    padding: 0.7rem 0.5rem !important;
-    font-size: 0.82rem !important;
+    padding: 0.7rem 1.1rem !important;
+    font-size: 0.85rem !important;
     justify-content: center !important;
     text-align: center !important;
-    width: 100% !important;
   }
 }
 

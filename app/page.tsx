@@ -944,18 +944,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Symmetrical 2x2 on Mobile / 4-in-a-row on Desktop */}
+              {/* Clean social/contact buttons row */}
               <div className="contact-actions-grid">
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-secondary"
-                  style={{ padding: "0.75rem 1.4rem" }}
-                  title="View Resume (PDF)"
-                >
-                  <span style={{ marginRight: "0.45rem", WebkitTextFillColor: "initial" }}>📄</span> Resume
-                </a>
                 <a
                   href="tel:0950869626"
                   className="btn-secondary"
