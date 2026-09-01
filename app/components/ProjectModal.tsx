@@ -191,16 +191,27 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
-              <Image
-                src={project.screenshots[currentImageIndex]}
-                alt={`${project.title} — screenshot ${currentImageIndex + 1}`}
-                width={1200}
-                height={750}
-                sizes="(max-width: 768px) 100vw, 720px"
-                style={{ width: "100%", height: "auto", maxHeight: "65vh", objectFit: "contain", borderRadius: "8px", userSelect: "none" }}
-                quality={90}
-                priority
-              />
+              {project.screenshots.map((src, idx) => (
+                <Image
+                  key={src}
+                  src={src}
+                  alt={`${project.title} — screenshot ${idx + 1}`}
+                  width={1200}
+                  height={750}
+                  sizes="(max-width: 768px) 100vw, 720px"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    maxHeight: "65vh",
+                    objectFit: "contain",
+                    borderRadius: "8px",
+                    userSelect: "none",
+                    display: idx === currentImageIndex ? "block" : "none",
+                  }}
+                  quality={90}
+                  priority
+                />
+              ))}
               <button
                 className="modal-fullscreen-btn"
                 onClick={(e) => {
@@ -415,18 +426,28 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </>
           )}
 
-          <Image
-            className="fullscreen-image"
-            src={currentScreenshot}
-            alt={`${project.title} screenshot ${currentImageIndex + 1} full screen`}
-            width={1920}
-            height={1080}
-            sizes="100vw"
-            style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto", objectFit: "contain" }}
-            quality={95}
-            priority
-            onClick={(e) => e.stopPropagation()}
-          />
+          {project.screenshots.map((src, idx) => (
+            <Image
+              key={`fullscreen-${src}`}
+              className="fullscreen-image"
+              src={src}
+              alt={`${project.title} screenshot ${idx + 1} full screen`}
+              width={1920}
+              height={1080}
+              sizes="100vw"
+              style={{
+                maxWidth: "100%",
+                maxHeight: "100%",
+                width: "auto",
+                height: "auto",
+                objectFit: "contain",
+                display: idx === currentImageIndex ? "block" : "none",
+              }}
+              quality={95}
+              priority
+              onClick={(e) => e.stopPropagation()}
+            />
+          ))}
 
           <div className="fullscreen-image-counter">
             {currentImageIndex + 1} / {project.screenshots.length}
