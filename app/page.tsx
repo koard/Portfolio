@@ -69,13 +69,13 @@ const projects: ProjectDetail[] = [
     github: "https://github.com/koard/DukeFarm-Frontend",
     demo: "https://dukefarm.ku.ac.th/",
     screenshots: [
-      "/dukefarm/1.png",
-      "/dukefarm/2.png",
-      "/dukefarm/3.png",
-      "/dukefarm/4.png",
-      "/dukefarm/5.png",
-      "/dukefarm/6.png",
-      "/dukefarm/7.png"
+      "/dukefarm/1.webp",
+      "/dukefarm/2.webp",
+      "/dukefarm/3.webp",
+      "/dukefarm/4.webp",
+      "/dukefarm/5.webp",
+      "/dukefarm/6.webp",
+      "/dukefarm/7.webp"
     ],
     highlight: false,
   },
@@ -99,8 +99,8 @@ const projects: ProjectDetail[] = [
     github: null,
     demo: null,
     screenshots: [
-      "/event/1.png",
-      "/event/2.png"
+      "/event/1.webp",
+      "/event/2.webp"
     ],
     highlight: false,
   },
@@ -139,18 +139,18 @@ const projects: ProjectDetail[] = [
     github: "https://github.com/koard/frontend_camhub",
     demo: null,
     screenshots: [
-      "/campus/1.png",
-      "/campus/2.png",
-      "/campus/6.png",
-      "/campus/7.png",
-      "/campus/8.png",
-      "/campus/9.png",
-      "/campus/10.png",
-      "/campus/11.png",
-      "/campus/12.png",
-      "/campus/13.png",
-      "/campus/14.png",
-      "/campus/15.png"
+      "/campus/1.webp",
+      "/campus/2.webp",
+      "/campus/6.webp",
+      "/campus/7.webp",
+      "/campus/8.webp",
+      "/campus/9.webp",
+      "/campus/10.webp",
+      "/campus/11.webp",
+      "/campus/12.webp",
+      "/campus/13.webp",
+      "/campus/14.webp",
+      "/campus/15.webp"
     ],
     highlight: false,
   },
@@ -187,15 +187,15 @@ const projects: ProjectDetail[] = [
     github: "https://github.com/koard/FurniShop",
     demo: "https://gofurnishop.vercel.app/",
     screenshots: [
-      "/furnishop/1.png",
-      "/furnishop/2.png",
-      "/furnishop/3.png",
-      "/furnishop/4.png",
-      "/furnishop/5.png",
-      "/furnishop/6.png",
-      "/furnishop/7.png",
-      "/furnishop/8.png",
-      "/furnishop/9.png"
+      "/furnishop/1.webp",
+      "/furnishop/2.webp",
+      "/furnishop/3.webp",
+      "/furnishop/4.webp",
+      "/furnishop/5.webp",
+      "/furnishop/6.webp",
+      "/furnishop/7.webp",
+      "/furnishop/8.webp",
+      "/furnishop/9.webp"
     ],
     highlight: false,
   },
@@ -234,14 +234,14 @@ const projects: ProjectDetail[] = [
     github: "https://github.com/koard/OpsPulse",
     demo: "https://opspulse.site/",
     screenshots: [
-      "/opspulse/0.png",
-      "/opspulse/1.png",
-      "/opspulse/2.png",
-      "/opspulse/3.png",
-      "/opspulse/4.png",
-      "/opspulse/5.png",
-      "/opspulse/6.png",
-      "/opspulse/7.png"
+      "/opspulse/0.webp",
+      "/opspulse/1.webp",
+      "/opspulse/2.webp",
+      "/opspulse/3.webp",
+      "/opspulse/4.webp",
+      "/opspulse/5.webp",
+      "/opspulse/6.webp",
+      "/opspulse/7.webp"
     ],
     highlight: false,
   },
@@ -274,9 +274,9 @@ const projects: ProjectDetail[] = [
     github: "https://github.com/koard/Personal-Wellness-Tracker",
     demo: null,
     screenshots: [
-      "/wellness/1.png",
-      "/wellness/2.png",
-      "/wellness/3.png"
+      "/wellness/1.webp",
+      "/wellness/2.webp",
+      "/wellness/3.webp"
     ],
     highlight: false,
   },
@@ -302,12 +302,12 @@ const projects: ProjectDetail[] = [
     github: null,
     demo: null,
     screenshots: [
-      "/azphuket/1.png",
-      "/azphuket/2.png",
-      "/azphuket/3.png",
-      "/azphuket/4.png",
-      "/azphuket/5.png",
-      "/azphuket/6.png",
+      "/azphuket/1.webp",
+      "/azphuket/2.webp",
+      "/azphuket/3.webp",
+      "/azphuket/4.webp",
+      "/azphuket/5.webp",
+      "/azphuket/6.webp",
     ],
     highlight: false,
   },
@@ -345,9 +345,9 @@ const projects: ProjectDetail[] = [
     github: null,
     demo: null,
     screenshots: [
-      "/embedded/1.png",
-      "/embedded/2.png",
-      "/embedded/3.png"
+      "/embedded/1.webp",
+      "/embedded/2.webp",
+      "/embedded/3.webp"
     ],
     highlight: false,
   },
@@ -372,9 +372,9 @@ const projects: ProjectDetail[] = [
     github: null,
     demo: null,
     screenshots: [
-      "/hpc/1.png",
-      "/hpc/2.png",
-      "/hpc/3.png"
+      "/hpc/1.webp",
+      "/hpc/2.webp",
+      "/hpc/3.webp"
     ],
     highlight: false,
   },
