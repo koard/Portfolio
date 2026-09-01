@@ -492,7 +492,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px 40px 0px" }
     );
     document.querySelectorAll(".fade-up").forEach((el) => {
       observerRef.current?.observe(el);
@@ -613,7 +613,7 @@ export default function Home() {
             </div>
             <div className="timeline-grid" style={{ marginTop: "2.5rem" }}>
               {experience.map((job, i) => (
-                <div key={i} className="timeline-item fade-up" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div key={i} className="timeline-item fade-up" style={{ transitionDelay: `${i * 0.05}s` }}>
                   <div className="timeline-connector">
                     <div className="timeline-dot" />
                     {i < experience.length - 1 && <div className="timeline-line" />}
@@ -651,7 +651,7 @@ export default function Home() {
                 <article
                   key={p.title}
                   className="project-card fade-up"
-                  style={{ transitionDelay: `${(i % 3) * 0.08}s` }}
+                  style={{ transitionDelay: `${(i % 3) * 0.04}s` }}
                   role="button"
                   tabIndex={0}
                   aria-label={`View details for ${p.title}`}
@@ -710,7 +710,7 @@ export default function Home() {
                   key={i}
                   className="skill-card fade-up"
                   style={{
-                    transitionDelay: `${i * 0.07}s`,
+                    transitionDelay: `${i * 0.04}s`,
                     borderColor: group.border,
                   }}
                 >
@@ -802,7 +802,7 @@ export default function Home() {
               </div>
 
               {/* High School */}
-              <div className="timeline-item fade-up" style={{ transitionDelay: "0.1s" }}>
+              <div className="timeline-item fade-up" style={{ transitionDelay: "0.05s" }}>
                 <div className="timeline-connector">
                   <div className="timeline-dot" />
                 </div>
